@@ -127,7 +127,11 @@ sliderButton.addEventListener('click', () => {
     position = 0;
   }
 
+<<<<<<< Updated upstream
   list.style.transition = 'transform 0.3s ease-out';
+=======
+  list.style.transition = 'transform 0.4s ease-out';
+>>>>>>> Stashed changes
   setPosition();
 
   setTimeout(() => {
