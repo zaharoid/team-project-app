@@ -14,7 +14,7 @@ async function renderAllCards(data) {
       markup =
         markup +
         `
-      <li class="book-card">
+      <li class="book-card" data-id="${book._id}">
         <div class="thumb">
           <img class="book-cover" src="${book.book_image}" alt="${book.title}" loading="lazy" />
         </div>
