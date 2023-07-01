@@ -1,0 +1,2 @@
+const t=document.querySelector(".category-list");fetch("https://books-backend.p.goit.global/books/category-list").then((t=>{if(!t.ok)throw new Error(t.status);return t.json()})).then((e=>{e.map((e=>{const o=`<li class="list category-item">\n        <a class="link category-link" href="#">${e.list_name}</a>\n      </li>`;t.insertAdjacentHTML("beforeend",o)}))}));
+//# sourceMappingURL=index.aa3fc338.js.map

@@ -1,0 +1,2 @@
+!function(){var t,n="https://books-backend.p.goit.global/",o=document.querySelector(".category-list");(t="".concat(n,"books/category-list"),fetch(t).then((function(t){if(!t.ok)throw new Error(t.status);return t.json()}))).then((function(t){t.map((function(t){var n='<li class="list category-item">\n        <a class="link category-link" href="#">'.concat(t.list_name,"</a>\n      </li>");o.insertAdjacentHTML("beforeend",n)}))}))}();
+//# sourceMappingURL=index.bc4020bf.js.map
