@@ -5,12 +5,16 @@ const refs = {
 fetchTopBooks().then(renderAllCards);
 
 async function renderAllCards(data) {
+  let booksArr = [];
+
   data.forEach(category => {
     let markup_base = `<li class="category">
     <h3>${category.books[0].list_name}</h3>
     <ul class="bookslist">`;
     let markup = ``;
+
     category.books.map(book => {
+      booksArr.push(book);
       markup =
         markup +
         `
@@ -28,4 +32,6 @@ async function renderAllCards(data) {
       `</ul><div class="button-container"><button>See more</button></div></li>`;
     refs.categoriesList.insertAdjacentHTML('beforeend', markup_base);
   });
+
+  localStorage.setItem('books', JSON.stringify(booksArr));
 }
