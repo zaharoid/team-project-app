@@ -35,11 +35,8 @@
   display: flex;
   padding-left: 40px;
   font-family: var(--primary-font);
-<<<<<<< Updated upstream
-  color: var(--categories-text-color-dark);
-=======
-  color: var(--title-text-color-theme-dark);
->>>>>>> Stashed changes
+  color: var(--categories-text-dark);
+  color: var(--title-text-color-dark);
   font-weight: 700;
   margin-top: 16px;
   font-size: 28px;
@@ -54,11 +51,9 @@
 
 .support-button {
   display: flex;
-<<<<<<< Updated upstream
   background-color: var(--categories-text-color-dark);
-=======
+
   background-color: var(--title-text-color-theme-dark);
->>>>>>> Stashed changes
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -99,11 +94,8 @@
   justify-self: center;
   align-self: flex-end;
   margin-bottom: 24px;
-<<<<<<< Updated upstream
   background-color: #FFFFFF;
   border-radius: 50;
-=======
->>>>>>> Stashed changes
 }
 
 .support-button-svg {
@@ -137,30 +129,19 @@
 }
 
 .support-svg {
-<<<<<<< Updated upstream
   fill: var(--categories-text-color-dark);
-=======
-  fill: var(--title-text-color-theme-dark);
->>>>>>> Stashed changes
   margin-left: 12px;
 }
 
 .support-img {
-<<<<<<< Updated upstream
   fill: var(--categories-text-color-dark);
-=======
-  fill: var(--title-text-color-theme-dark);
->>>>>>> Stashed changes
+
   margin-left: 16px;
   filter: brightness(0) invert(1); 
 }
 
 .support-number {
-<<<<<<< Updated upstream
   color: var(--categories-text-color-dark);
-=======
-  color: var(--title-text-color-theme-dark);
->>>>>>> Stashed changes
   display: flex;
   align-items: center;
   height: 32px;
