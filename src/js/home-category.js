@@ -1,11 +1,22 @@
 import { fetchBookCategories } from './books-api';
-const divEl = document.querySelector('.category-list')
+const refs = {
+  divEl: document.querySelector('.category-list'),
+};
 
 fetchBookCategories().then(data => {
   data.map(book => {
-        const markup = `<li class="list category-item">
+    const markup = `<li class="list category-item">
         <a class="link category-link" href="#">${book.list_name}</a>
-      </li>`
-      divEl.insertAdjacentHTML("beforeend", markup);
-    })
-})
+      </li>`;
+    refs.divEl.insertAdjacentHTML('beforeend', markup);
+  });
+});
+
+refs.divEl.addEventListener('click', onCategoryClick);
+
+function onCategoryClick(e) {
+  if (!e.target.classList.contains('category-link')) {
+    return;
+  }
+  e.preventDefault();
+}
