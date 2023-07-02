@@ -1,3 +1,7 @@
+// import icon from '../../images/icons.svg';
+
+// console.log('first', icon)
+
 const icon = {
     amazon: '../../images/image.svg#pattern0',
     Bookshop: '',

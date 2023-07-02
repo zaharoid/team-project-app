@@ -15,13 +15,11 @@ function eventListeners() {
     modalBody.addEventListener("scroll", (e) => { e.preventDefault() })
 }
 
-const allBooks = localStorage.getItem("books")
-const books = JSON.parse(allBooks)
-console.log(books);
+// const allBooks = localStorage.getItem("books")
+// const books = JSON.parse(allBooks)
+// console.log(books);
 
-function name(params) {
-    
-}
+
 
 function currentBook() {   
     const book = document.querySelector('[data-id]');
