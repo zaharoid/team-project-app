@@ -1,0 +1,173 @@
+@import url(./root.css);
+@import url(./reset.css);
+@import url(./base.css);
+
+.shopping-list-container {
+  width: 100%;
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 40px;
+}
+.title {
+  margin-bottom: 40px;
+  margin-left: auto;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+  color: var(--categories-text-color-light);
+}
+.title-wrapper {
+  color: var(--accent-color);
+}
+.book-card {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  background-color: var(--header-bg-color-light);
+  border-radius: 16px;
+  border-width: 2px;
+  border-color: #4f2ee8 40%;
+}
+.book-image-wrapper {
+  width: 100px;
+  height: 142px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.book-image {
+  width: 100px;
+  height: 142px;
+}
+.book-info {
+  width: 100%;
+}
+.book-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  margin-bottom: 4px;
+}
+.book-category {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--secondary-text-color);
+  margin-bottom: 8px;
+}
+.book-descr {
+  height: 68px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+  color: var(--categories-text-color-light);
+  margin-bottom: 14px;
+}
+.card-inner-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.book-author {
+  font-weight: 400;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.17;
+  letter-spacing: -0.04em;
+}
+.buy-links-wrapper {
+  display: flex;
+  gap: 8px;
+}
+.buy-link:is(:hover, :focus) {
+  box-shadow: var(--icon-hover-shadow);
+}
+.remove-book {
+  position: absolute;
+  top:14px;
+  right: 14px;
+  width: 28px;
+  height: 28px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+.remove-image {
+  width: 12px;
+  height: 12px;
+}
+.empty-list-card {
+  width: 265px;
+}
+.empty-list-text {
+  padding-top: 80px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+}
+.empty-list-image {
+  width: 265px;
+}
+@media screen and (min-width: 375px) {
+  .shopping-list-container {
+    max-width: 375px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .shopping-list-container {
+    max-width: 768px;
+    padding-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .title {
+    font-size: 48px;
+    line-height: 1.08;
+  }
+  .book-card {
+    gap: 24px;
+    padding: 24px;
+  }
+  .book-image-wrapper {
+    width: 116px;
+    height: 165px;
+  }
+  .book-image {
+    width: 116px;
+    height: 165px;
+  }
+  .book-category {
+    margin-bottom: 14px;
+  }
+  .book-descr {
+    height: 68px;
+    margin-bottom: 14px;
+  }
+  .remove-book {
+    top:24px;
+    right: 24px;
+    width: 34px;
+    height: 34px;
+  }
+  .remove-image {
+    width: 18px;
+    height: 18px;
+  }
+  .buy-links-wrapper {
+    gap: 16px;
+  }
+  .empty-list-text {
+    padding-top: 100px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .shopping-list-container {
+    max-width: 1440px;
+  }
+}
