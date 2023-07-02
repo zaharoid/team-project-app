@@ -20,12 +20,14 @@
     flex-direction: column;
     gap: 20px;
 }
+
 .category-link {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.13;
-    color: rgba(17, 17, 17, 0.6);
+    color: var(--categories-text-color-light);
 }
+
 .category-link:hover,
 .category-link:focus {
     color: rgba(79, 46, 232, 1);
@@ -38,17 +40,21 @@
         width: 337px;
         height: 472px;
     }
-        .category-list{
-            gap: 32px;
-        }
-        .category-link {
-        
-            font-size: 18px;
-            line-height: 1.33;
-        }
+
+    .category-list {
+        gap: 32px;
+    }
+
+    .category-link {
+
+        font-size: 18px;
+        line-height: 1.33;
+    }
 }
+
 @media screen and (min-width: 1440px) {
-.category {
+    .category {
         width: 356px;
-    
+
+    }
 }
