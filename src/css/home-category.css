@@ -19,6 +19,9 @@ padding-top: 40px;
     overflow-y: scroll;
 
 }
+
+
+
 .category::-webkit-scrollbar {
     width: 8px;
     height: 167px;
@@ -52,13 +55,16 @@ padding-top: 40px;
     line-height: 1.13;
     color: var(--categories-text-color-light);
 }
+.is-active {
+    color:blue;
+}
 
-.category-link:hover,
+/* .category-link:hover,
 .category-link:focus {
     color: rgba(79, 46, 232, 1);
     font-weight: 700;
     text-transform: uppercase;
-}
+} */
 
 @media screen and (min-width: 768px) {
     /* .container {

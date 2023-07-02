@@ -1,8 +1,8 @@
-import { fetchBookCategories} from './books-api';
+import { fetchBookCategories } from './books-api';
 const refs = {
   divEl: document.querySelector('.category-list'),
   allcategory: document.querySelector('.all-category'),
-  onecategoryEl: document.querySelector('.category-link')
+  onecategoryEl: document.querySelector('.category-link'),
 };
 
 fetchBookCategories().then(data => {
@@ -23,10 +23,16 @@ function onCategoryClick(e) {
   }
   e.preventDefault();
 
+  let activeBook = document.querySelector('.is-active');
+
+  if (activeBook) {
+    activeBook.classList.remove('is-active');
+  }
+
+  e.target.classList.add('is-active');
+  console.log(e.target);
+
   let titleCategory = document.querySelector('.category-title');
   let titleTextContent = e.target.textContent;
   titleCategory.textContent = titleTextContent;
-
-
 }
-
