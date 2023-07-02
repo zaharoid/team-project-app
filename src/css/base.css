@@ -1,5 +1,5 @@
 :root {
-  --accent-color: #4f2ee8;
+--accent-color: #4f2ee8;
   --hover-book-color: #eac645;
   --categories-text-color-light: rgba(17, 17, 17, 0.6);
   --categories-text-color-dark: rgba(255, 255, 255, 0.6);
@@ -15,6 +15,21 @@
   --icon-hover-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
+
+body {
+    background-color: var(--base-bg-color);
+}
+
+.container-mobile {
+    max-width: 280px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+  
+
+
 * {
   box-sizing: border-box;
 }
@@ -27,6 +42,7 @@
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+
 }
 /* tablet */
 @media screen and (min-width: 480px) {
