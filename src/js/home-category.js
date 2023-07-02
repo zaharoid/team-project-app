@@ -22,6 +22,11 @@ function onCategoryClick(e) {
     return;
   }
   e.preventDefault();
-  // console.log(e.target.textContent)
+
+  let titleCategory = document.querySelector('.category-title');
+  let titleTextContent = e.target.textContent;
+  titleCategory.textContent = titleTextContent;
+
+
 }
 
