@@ -33,7 +33,7 @@ export function createMarkup(data) {
 }
 function createBookSeller({ buy_links }) {
     return buy_links.map(arr => {
-        console.log('arr', arr)
+        // console.log('arr', arr)
         if (arr.name === "Amazon") {
             return `<li>
         <a href=${arr.url} target="_blank">

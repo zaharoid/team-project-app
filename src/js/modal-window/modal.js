@@ -15,16 +15,25 @@ function eventListeners() {
     modalBody.addEventListener("scroll", (e) => { e.preventDefault() })
 }
 
-function currentBook() {    
+const allBooks = localStorage.getItem("books")
+const books = JSON.parse(allBooks)
+console.log(books);
+
+function name(params) {
+    
+}
+
+function currentBook() {   
     const book = document.querySelector('[data-id]');
-    console.dir(book)
+    // console.log(book)
     const bookCards = document.querySelectorAll('[data-id]');
-    console.log(bookCards)
+    // console.log(bookCards)
     bookCards.forEach(card => {
+    
         card.addEventListener('click', () => {
             const bookId = card.dataset.id;
             fetchBookID(bookId).then(data => {
-                console.log('data', data)
+                // console.log('data', data)
                 modalOpenWindow.innerHTML = createMarkup(data)
                 modalOpenWindow.classList.add("overlay")
                 blockScroll()
