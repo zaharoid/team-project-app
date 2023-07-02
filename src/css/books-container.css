@@ -1,3 +1,4 @@
+
 .bookslist{
   display: flex;
 }
@@ -20,7 +21,7 @@
   margin-left: 24px;
 }
 
-.categories-list .category + .category {
+.books-in-categories-list .category-item + .category-item {
   margin-top: 40px;
 }
 
