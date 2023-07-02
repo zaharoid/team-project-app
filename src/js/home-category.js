@@ -19,4 +19,7 @@ function onCategoryClick(e) {
     return;
   }
   e.preventDefault();
+  let titleCategory = document.querySelector('.category-title');
+  let titleTextContent = e.target.textContent;
+  titleCategory.textContent = titleTextContent;
 }
