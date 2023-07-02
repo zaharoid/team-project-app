@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const switchInput = document.querySelector('.switch input');
   switchInput.checked = localStorage.getItem('theme') === 'dark';
-
   document.querySelector('.switch').addEventListener('click', event => {
     const theme = switchInput.checked ? 'dark' : '';
     if (theme === 'dark') {
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
       slider.classList.remove('dark-theme');
     }
   }
-
   addDarkClassToHTML();
   updateSliderClass();
 });
