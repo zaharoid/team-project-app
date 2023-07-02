@@ -2,8 +2,7 @@
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./books-container.css');
-
+@import url('./books-category.css');
 @import url('./dark-theme.css');
-
 @import url('./home-category.css');
 @import url('./home__support.css');

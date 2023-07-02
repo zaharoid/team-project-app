@@ -1,19 +1,18 @@
 :root {
-    --base-bg-color: #ffffff;
-    --accent-color: #4F2EE8;
-    --hover-book-color: #EAC645;
-    --categories-text-color-light: rgba(17, 17, 17, 0.60);
-    --categories-text-color-dark: rgba(255, 255, 255, 0.60);
-    --logo-color-text: #111111;
-    --link-home-and-shopping-list-color: #111111;
-    --primery-bg-color-light: #fff;
-    --primery-bg-color-dark: #202024;
-    --primery-font: 'DM Sans', Sans-serif;
-    --primery-text-color-dark: #F3F3F3;
-    --header-bg-color-light: #fff;
-    --header-bg-color-dark: #000;
-    --secondary-text-color: #B4AFAF;
-    --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+--accent-color: #4f2ee8;
+  --hover-book-color: #eac645;
+  --categories-text-color-light: rgba(17, 17, 17, 0.6);
+  --categories-text-color-dark: rgba(255, 255, 255, 0.6);
+  --logo-color-text: #111111;
+  --primery-bg-color-light: #f6f6f6;
+  --primery-bg-color-dark: #202024;
+  --primery-font: 'DM Sans', Sans-serif;
+  --primery-text-color-dark: #f3f3f3;
+  --header-bg-color-light: #fff;
+  --header-bg-color-dark: #000;
+  --secondary-text-color: #b4afaf;
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --icon-hover-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -27,20 +26,54 @@ body {
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
+
+  
+
+
+* {
+  box-sizing: border-box;
 }
 
-.container-tablet {
+.main-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+/* tablet */
+@media screen and (min-width: 480px) {
+
+}
+/* desktop */
+@media screen and (min-width: 768px) {
+  .sidebar-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .main-container {
     max-width: 704px;
     padding-left: 32px;
     padding-right: 32px;
     margin-left: auto;
     margin-right: auto;
+  }
 }
 
-.container-desktop {
-    width: 1392px;
+@media screen and (min-width: 1440px) {
+  .sidebar-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .main-container {
+    flex-direction: row;
+    max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
     margin-right: auto;
     margin-left: auto;
+  }
 }
