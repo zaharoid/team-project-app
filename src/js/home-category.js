@@ -36,6 +36,8 @@ function onCategoryClick(e) {
   let titleTextContent = e.target.textContent;
   titleCategory.textContent = titleTextContent;
 
+  refs.categoriesList.classList.add('render-category');
+
   fetchBookByCategory(e.target.textContent).then(data => renderMarkupBooksByCategory(takeBookMarkupByCategory(data)))
 
 }
@@ -45,12 +47,12 @@ function takeBookMarkupByCategory(books) {
   let markup = books.map(({ author, title, book_image, _id }) => {
   
     return `
-      <li class="book-card" data-id="${_id}">
+      <li class="book-card render-item-card" data-id="${_id}">
         <div class="thumb">
           <img class="book-cover" src="${book_image}" alt="${title}" loading="lazy" />
         </div>
-        <h4 class="book-title">${title}</h4>
-        <p>${author}</p>
+        <h4 class="render-title">${title}</h4>
+        <p class="render-author">${author}</p>
       </li>`;
     
   }).join('');
