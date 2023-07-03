@@ -10,6 +10,18 @@
   border-radius: 16px;
 }
 
+.support__img {
+  filter: grayscale(100%) brightness(0) invert(100%);
+   transition: filter var(--animation),
+  transform var(--animation);
+}
+
+.js-target:hover .support__img,
+.js-target:focus .support__img {
+    filter: none;
+    transform: scale(1.1);
+  }
+
 @media screen and (min-width:428px) {
   .support-box{
   max-width: 335px;
@@ -52,8 +64,6 @@
 .support-button {
   display: flex;
   background-color: var(--categories-text-color-dark);
-
-  background-color: var(--title-text-color-theme-dark);
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -100,7 +110,6 @@
 
 .support-button-svg {
   fill: var(--accent-color);
-
   display: flex;
   margin: 0;
   width: 20px;
