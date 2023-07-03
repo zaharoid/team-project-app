@@ -12,8 +12,10 @@
 
 .support__img {
   filter: grayscale(100%) brightness(0) invert(100%);
-   transition: filter var(--transition-duration) var(--animation),
-  transform var(--transition-duration) var(--animation);
+
+   transition: filter var(--animation),
+  transform var(--animation);
+
 }
 
 .js-target:hover .support__img,
