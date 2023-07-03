@@ -1,8 +1,9 @@
-import { fetchBookCategories } from './books-api';
+import { fetchBookCategories, fetchBookByCategory } from './books-api';
 const refs = {
   divEl: document.querySelector('.category-list'),
   allcategory: document.querySelector('.all-category'),
   onecategoryEl: document.querySelector('.category-link'),
+  categoriesList: document.querySelector('.books-in-categories-list'),
 };
 
 fetchBookCategories().then(data => {
@@ -30,9 +31,34 @@ function onCategoryClick(e) {
   }
 
   e.target.classList.add('is-active');
-  console.log(e.target);
 
-  let titleCategory = document.querySelector('.category-title');
+  let titleCategory = document.querySelector('.booklist-title');
   let titleTextContent = e.target.textContent;
   titleCategory.textContent = titleTextContent;
+
+  refs.categoriesList.classList.add('render-category');
+
+  fetchBookByCategory(e.target.textContent).then(data => renderMarkupBooksByCategory(takeBookMarkupByCategory(data)))
+
 }
+
+
+function takeBookMarkupByCategory(books) { 
+  let markup = books.map(({ author, title, book_image, _id }) => {
+  
+    return `
+      <li class="book-card render-item-card" data-id="${_id}">
+        <div class="thumb">
+          <img class="book-cover" src="${book_image}" alt="${title}" loading="lazy" />
+        </div>
+        <h4 class="render-title">${title}</h4>
+        <p class="render-author">${author}</p>
+      </li>`;
+    
+  }).join('');
+  return markup;
+};
+
+function renderMarkupBooksByCategory(markup) { 
+  refs.categoriesList.innerHTML = markup;
+};
