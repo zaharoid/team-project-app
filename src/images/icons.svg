@@ -149,7 +149,7 @@
         d="M5.333 16h21.333m.001 0-8-8m8 8-8 8" />
     </symbol>
             <symbol id="arrow-narrow-right-sign-up" viewBox="0 0 32 32">
-      <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2"
+      <path  stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2"
         d="M5.333 16h21.333m.001 0-8-8m8 8-8 8" />
     </symbol>
   </defs>

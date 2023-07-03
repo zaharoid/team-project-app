@@ -1,3 +1,4 @@
+import './header';
 import './home__support';
 import './home-category';
 
