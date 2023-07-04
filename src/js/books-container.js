@@ -19,8 +19,11 @@ export async function renderAllCards(data) {
         markup +
         `
       <li class="book-card book-card-main" data-id="${book._id}">
-        <div class="thumb">
+        <div class="thumb book-cover-container">
           <img class="book-cover" src="${book.book_image}" alt="${book.title}" loading="lazy" />
+          <div class="overlay-book">
+            <p class="hidden-card">quick view</p>
+          </div>
         </div>
         <h4 class="book-title">${book.title}</h4>
         <p class=book-author-name>${book.author}</p>
