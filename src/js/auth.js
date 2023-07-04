@@ -1,25 +1,25 @@
 import { initializeApp } from 'firebase/app';
-// import { getDatabase, ref, set } from 'firebase/database';
+import { getDatabase, ref, set } from 'firebase/database';
 
-// const API_KEY = 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc';
+const API_KEY = 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc';
 
-// firebaseConfig = {
-//   databaseURL: `gs://books-project-c0eb5.appspot.com`,
-// };
+firebaseConfig = {
+  databaseURL: `gs://books-project-c0eb5.appspot.com`,
+};
 
-// const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-// // const database = getDatabase(app);
+// const database = getDatabase(app);
 
-// function writeUserData(userId, name, email) {
-//   const db = getDatabase(app);
-//   console.log(db);
+function writeUserData(userId, name, email) {
+  const db = getDatabase(app);
+  console.log(db);
 
-//   set(ref(db, 'users/' + userId), {
-//     username: name,
-//     email: email,
-//   });
-// }
+  set(ref(db, 'users/' + userId), {
+    username: name,
+    email: email,
+  });
+}
 
 writeUserData(
   'DKt5yaLfQNTI9LVZtnLPhYqLJk63',
