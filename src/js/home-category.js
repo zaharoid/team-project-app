@@ -1,5 +1,6 @@
 import { lastWordChange } from './books-container';
-import { fetchBookCategories, fetchBookByCategory } from './books-api';
+import { renderAllCards} from './books-container';
+import { fetchTopBooks, fetchBookCategories, fetchBookByCategory } from './books-api';
 const refs = {
   divEl: document.querySelector('.category-list'),
   allcategory: document.querySelector('.all-category'),
@@ -27,12 +28,22 @@ function onCategoryClick(e) {
   }
   e.target.classList.add('is-active');
   let titleCategory = document.querySelector('.booklist-title');
-  let titleTextContent = e.target.textContent;
-  titleCategory.innerHTML = lastWordChange(titleTextContent);
-  refs.categoriesList.classList.add('render-category');
-  fetchBookByCategory(e.target.textContent).then(data =>
-    renderMarkupBooksByCategory(takeBookMarkupByCategory(data))
-  );
+  
+  if (e.target.id === "") {
+    let titleTextContent = e.target.textContent;
+    titleCategory.innerHTML = lastWordChange(titleTextContent);
+    refs.categoriesList.classList.add('render-category');
+    fetchBookByCategory(e.target.textContent).then(data =>
+      renderMarkupBooksByCategory(takeBookMarkupByCategory(data))
+    );
+  }
+  else {
+    refs.categoriesList.innerHTML = "";
+    titleCategory.innerHTML = lastWordChange("Best Sellers Books");
+    refs.categoriesList.classList.add('render-category');
+    fetchTopBooks().then(renderAllCards);
+  }
+
 }
 function takeBookMarkupByCategory(books) {
   let markup = books

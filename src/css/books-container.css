@@ -25,7 +25,6 @@
 .book-card {
   width: 335px;
   height: 535px;
-  margin-bottom: 8px;
   cursor: pointer;
 }
 .book-title {
@@ -36,7 +35,11 @@
   line-height: 18px;
   letter-spacing: -0.64px;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .book-author-name {
   color: var(--secondary-text-color);
   font-size: 12px;
@@ -65,19 +68,8 @@
   text-transform: uppercase;
 }
 
-.bookslist .book-card + .book-card {
-  margin-left: 24px;
-}
-
 .books-in-categories-list .category-item + .category-item {
   margin-top: 40px;
-}
-
-.book-title {
-  font-size: 16px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .booklist-container {
@@ -94,6 +86,7 @@
   line-height: 38px;
   letter-spacing: -1.28px;
 }
+
 .category-last-word {
   color: var(--accent-color);
 }
@@ -106,6 +99,10 @@
   letter-spacing: 0.42px;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+.bookslist {
+  margin-bottom: 8px;
 }
 
 @media screen and (min-width: 0px) and (max-width: 767px) {
@@ -125,6 +122,25 @@
 
 /* tablet */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
+  .bookslist .book-card + .book-card {
+    margin-left: 25px;
+  }
+
+  .bookslist {
+    margin-bottom: 20px;
+  }
+
+  .booklist-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 52px;
+    letter-spacing: -1.92px;
+  }
+
+  .book-category-title {
+    line-height: 18px;
+    letter-spacing: 0.42px;
+  }
   .book-card {
     width: 218px;
     height: 366px;
@@ -151,9 +167,13 @@
 
 /* desktop */
 @media screen and (min-width: 1440px) {
+  .bookslist .book-card + .book-card {
+    margin-left: 24px;
+  }
+
   .booklist-container {
-      margin-left: 40px;
-    }
+    margin-left: 40px;
+  }
   .book-card {
     width: 180px;
     height: 306px;
