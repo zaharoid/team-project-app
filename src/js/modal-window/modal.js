@@ -10,9 +10,11 @@ const modalDescription = document.querySelector(".modal-description")
 const amazon = document.querySelector(".amazon")
 const apple = document.querySelector(".apple")
 const bookShop = document.querySelector(".bookshop")
+
 const addBookBtn = document.querySelector(".modal-add-btn")
 
 modalBody.style.paddingRight = "0px"
+
 
 modalBody.addEventListener('click', currentBook)
 
