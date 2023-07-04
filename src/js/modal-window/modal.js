@@ -1,6 +1,6 @@
 import { fetchBookID } from '../books-api'
 
-let modalBody = document.querySelector("main")
+let modalBody = document.querySelector("body")
 let modalOpenWindow = document.querySelector(".modal_window")
 let modalMain = document.querySelector(".modal-main")
 const bookCover = document.querySelector(".modal-cover")
@@ -41,13 +41,13 @@ export function buttonID(data) {
 function createMarkup(data) {
     modalOpenWindow.classList.add("overlay")
     modalBody.style.paddingRight = "18px"
-                modalMain.style.visibility = "visible"
-                modalMain.style.opacity = "1"
-                bookCover.src = data.book_image
-                bookCover.alt = data.title
-                modalTitle.textContent = data.title
-                modalAuthor.textContent = data.author
-                modalDescription.textContent = data.description
+        modalMain.style.visibility = "visible"
+        modalMain.style.opacity = "1"
+        bookCover.src = data.book_image
+        bookCover.alt = data.title
+        modalTitle.textContent = data.title
+        modalAuthor.textContent = data.author
+        modalDescription.textContent = data.description
     topBookShopLink(data)
                 
 }
