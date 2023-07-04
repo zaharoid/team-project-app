@@ -1,0 +1,7 @@
+.dark-theme {
+    --base-bg-color: #202024;
+    --primery-bg-color-light: #111111;
+    --logo-color-text: #F3F3F3;
+    --link-home-and-shopping-list-color: #ffffff;
+    --categories-text-color-light: rgba(255, 255, 255, 0.60);
+}

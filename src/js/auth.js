@@ -1,3 +1,4 @@
+
 const openBtn = document.querySelector('.user-btn');
 openBtn.addEventListener('click', openModal);
 
@@ -12,12 +13,14 @@ function openModal() {
 function closeModal(e) {
   const modal = document.querySelector('.modal-form-auth');
   modal.style.display = 'none';
+
 }
 
 function authFormHandler(e) {
   e.preventDefault();
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
+
   authWithEmailAmdPassword(email, password);
 }
 
@@ -41,6 +44,7 @@ function getAuthForm() {
       </div>
     </div>
   `;
+
 }
 
 function authWithEmailAmdPassword(email, password) {
@@ -56,6 +60,14 @@ function authWithEmailAmdPassword(email, password) {
     }
   }).then(res => res.json())
     .then(data => {
+
       console.log(data);
     });
 }
+
+     data
+    }
+    )
+  
+}
+
