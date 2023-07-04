@@ -1,4 +1,3 @@
-
 const openBtn = document.querySelector('.user-btn');
 openBtn.addEventListener('click', openModal);
 
@@ -6,14 +5,17 @@ function openModal() {
   const modal = document.querySelector('.modal-form-auth');
   modal.style.display = 'block';
   modal.innerHTML = getAuthForm();
-  document.getElementById('auth-form').addEventListener('submit', authFormHandler, { once: true });
-  document.querySelector('.close-button-auth').addEventListener('click', closeModal);
+  document
+    .getElementById('auth-form')
+    .addEventListener('submit', authFormHandler, { once: true });
+  document
+    .querySelector('.close-button-auth')
+    .addEventListener('click', closeModal);
 }
 
 function closeModal(e) {
   const modal = document.querySelector('.modal-form-auth');
   modal.style.display = 'none';
-
 }
 
 function authFormHandler(e) {
@@ -25,7 +27,7 @@ function authFormHandler(e) {
 }
 
 function getAuthForm() {
-  return  `
+  return `
     <div class="modal-body-auth">
       <div class="modal-content-auth">
         <form class="form" id="auth-form">
@@ -44,30 +46,26 @@ function getAuthForm() {
       </div>
     </div>
   `;
-
 }
 
 function authWithEmailAmdPassword(email, password) {
-  const API_KEY = "AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc";
-  return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`, {
-    method: 'POST',
-    body: JSON.stringify({
-      email, password,
-      returnSecureToken: true
-    }),
-    headers: {
-      "Content-Type": "application/json"
+  const API_KEY = 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc';
+  return fetch(
+    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        password,
+        returnSecureToken: true,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     }
-  }).then(res => res.json())
+  )
+    .then(res => res.json())
     .then(data => {
-
       console.log(data);
     });
 }
-
-     data
-    }
-    )
-  
-}
-
