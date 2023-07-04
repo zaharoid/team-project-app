@@ -8,7 +8,7 @@ async function renderAllCards(data) {
 
   data.forEach(category => {
     let markup_base = `<li class="category-item">
-    <h3>${category.books[0].list_name}</h3>
+    <h3 class="description-book-cont-color">${category.books[0].list_name}</h3>
     <ul class="bookslist">`;
     let markup = ``;
 
@@ -22,7 +22,7 @@ async function renderAllCards(data) {
           <img class="book-cover" src="${book.book_image}" alt="${book.title}" loading="lazy" />
         </div>
         <h4 class="book-title">${book.title}</h4>
-        <p>${book.author}</p>
+        <p class="author-text-color">${book.author}</p>
       </li>`;
     });
     markup_base =
@@ -38,7 +38,7 @@ async function renderAllCards(data) {
 refs.categoriesList.addEventListener('click', onMoreBtnClick);
 
 function onMoreBtnClick(e) {
-  if (e.target.nodeName !== "BUTTON") {
+  if (e.target.nodeName !== 'BUTTON') {
     return;
   }
   //console.log(e.target.getAttribute('data-category-name'))

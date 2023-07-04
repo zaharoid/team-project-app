@@ -1,9 +1,11 @@
+
  import { initializeApp } from 'firebase/app';
   import {
     getAuth,
     createUserWithEmailAndPassword,
 } from 'firebase/database';
   import { getDatabase, ref, set } from 'firebase/database';
+
 
 const API_KEY = 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc';
 
@@ -26,11 +28,11 @@ function writeUserData(userId, name, email) {
   console.log(db);
 }
 
-writeUserData(
-  'DKt5yaLfQNTI9LVZtnLPhYqLJk63',
-  'ilya',
-  'tkachenkoilya07@icloud.com'
-);
+// writeUserData(
+//   'DKt5yaLfQNTI9LVZtnLPhYqLJk63',
+//   'ilya',
+//   'tkachenkoilya07@icloud.com'
+// );
 
 const openBtn = document.querySelector('.user-btn');
 openBtn.addEventListener('click', openModal);
