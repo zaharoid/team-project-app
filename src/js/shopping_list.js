@@ -1,3 +1,4 @@
+
 import './home__support';
 import './dark-theme';
 import './modal-window/modal';
@@ -30,6 +31,7 @@ function createMarkup(arr, selectedBookList) {
           description,
           buy_links,
         }) => ` <li class="book-card data-id="${_id}" >
+
           <div class="book-image-wrapper"><img src="${book_image}" alt="${title}" class="book-image"></div>
           <div class="book-info">
               <h2 class="book-title">${title}</h2>
@@ -37,7 +39,21 @@ function createMarkup(arr, selectedBookList) {
               <p class="book-descr">${description}</p>
               <div class="card-inner-wrapper">
                   <h3 class="book-author">${author}</h3>
+
                   <ul class="buy-links-list">${createBuyLinks(buy_links)}</ul>  
+
+                  <div class="buy-links-wrapper">
+                  <svg class="buy-link">
+      <use href="./images/icons.svg#icon-trash"></use>
+    </svg>
+    <svg class="buy-link">
+      <use href="./images/icons.svg#icon-trash"></use>
+    </svg>
+    <svg class="buy-link">
+      <use href="./images/icons.svg#icon-trash"></use>
+    </svg>
+                  </div>
+
               </div>
               <button type="button" class="remove-book">
               <svg class="remove-image">
@@ -48,6 +64,7 @@ function createMarkup(arr, selectedBookList) {
           
           
       </li>`
+
       )
       .join('');
   } else {
@@ -100,3 +117,4 @@ function findBook(elem) {
   const bookId = elem.closest('.book-card').dataset.id;
   return selectedBooks.find(({ id }) => id === bookId);
 }
+

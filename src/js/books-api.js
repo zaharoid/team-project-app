@@ -31,7 +31,7 @@ const fetchBookByCategory = bookCategory => {
     });
 };
 
-const fetchBookID= (bookId) => {
+const fetchBookID = (bookId) => {
     const url = `${API_URL}books/${bookId}`;
     return fetch(url).then(response => {
         if (!response.ok) {

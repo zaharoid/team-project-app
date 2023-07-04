@@ -1,15 +1,14 @@
 import { fetchTopBooks } from './books-api';
 const refs = {
-  categoriesList: document.querySelector('.categories-list'),
+  categoriesList: document.querySelector('.books-in-categories-list'),
 };
 fetchTopBooks().then(renderAllCards);
-
 async function renderAllCards(data) {
   let booksArr = [];
 
   data.forEach(category => {
-    let markup_base = `<li class="category">
-    <h3>${category.books[0].list_name}</h3>
+    let markup_base = `<li class="category-item">
+    <h3 class="description-book-cont-color">${category.books[0].list_name}</h3>
     <ul class="bookslist">`;
     let markup = ``;
 
@@ -23,15 +22,24 @@ async function renderAllCards(data) {
           <img class="book-cover" src="${book.book_image}" alt="${book.title}" loading="lazy" />
         </div>
         <h4 class="book-title">${book.title}</h4>
-        <p>${book.author}</p>
+        <p class="author-text-color">${book.author}</p>
       </li>`;
     });
     markup_base =
       markup_base +
       markup +
-      `</ul><div class="button-container"><button>See more</button></div></li>`;
+      `</ul><div class="button-container" ><button class="books-by-category" data-category-name="${category.books[0].list_name}">See more</button></div></li>`;
     refs.categoriesList.insertAdjacentHTML('beforeend', markup_base);
   });
 
   localStorage.setItem('books', JSON.stringify(booksArr));
+}
+
+refs.categoriesList.addEventListener('click', onMoreBtnClick);
+
+function onMoreBtnClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  //console.log(e.target.getAttribute('data-category-name'))
 }
