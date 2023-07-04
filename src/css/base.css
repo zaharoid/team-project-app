@@ -28,7 +28,7 @@ body {
 .main-container {
   display: flex;
   flex-direction: column;
-  max-width: 280px;
+  max-width: 375px;
   padding-left: 20px;
   padding-right: 20px;
   margin-left: auto;
@@ -46,11 +46,9 @@ body {
     flex-direction: row;
   }
   .main-container {
-    max-width: 704px;
+    max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -64,7 +62,6 @@ body {
     max-width: 1440px;
     padding-left: 24px;
     padding-right: 24px;
-    margin-right: auto;
-    margin-left: auto;
+
   }
 }
