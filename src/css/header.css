@@ -206,6 +206,11 @@ input:checked + .slider:before {
   stroke: var(--hover-book-color);
 }
 
+.icon-display-none {
+  display: none;
+}
+/* .header-icon-open{} */
+
 @media screen and (min-width: 375px) {
   .header-container {
     max-width: 375px;
