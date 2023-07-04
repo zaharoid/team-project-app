@@ -7,3 +7,4 @@ import './books-container';
 import './dark-theme';
 import './modal-window/modal';
 import './header';
+import './auth';

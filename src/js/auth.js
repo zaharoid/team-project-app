@@ -1,56 +1,83 @@
+import { getDatabase } from "firebase/database";
+console.log(getDatabase)
 
-const openBtn = document.querySelector('.open');
-const modal = document.querySelector('.modal');
-
-openBtn.addEventListener('click', openModal)
+function writeUserData(userId, name, email, ) {
+  
+  // set(ref(db, 'users/' + userId), {
+  //   username: name,
+  //   email: email,
+    
+  // });
+}
+writeUserData()
+const openBtn = document.querySelector('.user-btn');
+openBtn.addEventListener('click', openModal);
 
 function openModal() {
-    modal.style.display = 'block';
+  const modal = document.querySelector('.modal-form-auth');
+  modal.style.display = 'block';
   modal.innerHTML = getAuthForm();
-  document.getElementById('auth-form').addEventListener('submit', authFormHandler, { once: true });
+  document
+    .getElementById('auth-form')
+    .addEventListener('submit', authFormHandler, { once: true });
+  document
+    .querySelector('.close-button-auth')
+    .addEventListener('click', closeModal);
+}
+
+function closeModal(e) {
+  const modal = document.querySelector('.modal-form-auth');
+  modal.style.display = 'none';
 }
 
 function authFormHandler(e) {
   e.preventDefault();
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  authWithEmailAmdPassword(email,password)
-  
+
+  authWithEmailAmdPassword(email, password);
 }
 
 function getAuthForm() {
-    return  `
-    <form class="form" id="auth-form">
-     <h2>Authentication</h2>
-      <div class="form-group">
-        <input type="email" id="email" required>
-        <label for="email">Email</label>
+  return `
+    <div class="modal-body-auth">
+      <div class="modal-content-auth">
+        <form class="form" id="auth-form">
+          <h2 class="title-auth">Authentication</h2>
+          <div class="form-group">
+            <input class="input-auth" type="email" id="email"  required>
+            <label class="form-text-auth" for="email">Email</label>
+          </div>
+          <div class="form-group">
+            <input class="input-auth" type="password" id="password" name="password" required>
+            <label class="form-text-auth" for="password">Пароль</label>
+          </div>
+          <button type="submit" class="submit-btn">Войти</button>
+          <button class="close-button-auth">Закрыть</button>
+        </form>
       </div>
-      <div class="form-group">
-        <input type="password" id="password" required>
-        <label for="password">Пароль</label>
-      </div>
-      <button type="submit" class="submit-btn">Войти</button>
-    </form>
-    <button class="close-button">Закрыть</button>
-  `
+    </div>
+  `;
 }
 
 function authWithEmailAmdPassword(email, password) {
-  const API_KEY = "AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc";
-  return fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`, {
-    method: 'POST',
-    body: JSON.stringify({
-      email, password,
-      returnSecureToken: true
-    }),
-    headers: {
-      "Content-Type": "application/json"
+  const API_KEY = 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc';
+  return fetch(
+    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${API_KEY}`,
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        password,
+        returnSecureToken: true,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
     }
-  }).then(res => res.json())
+  )
+    .then(res => res.json())
     .then(data => {
-     data
-    }
-    )
-  
+      console.log(data);
+    });
 }
