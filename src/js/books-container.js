@@ -4,7 +4,7 @@ const refs = {
   booklistTitle: document.querySelector('.booklist-title'),
 };
 fetchTopBooks().then(renderAllCards);
-async function renderAllCards(data) {
+export async function renderAllCards(data) {
   let booksArr = [];
   refs.booklistTitle.innerHTML = lastWordChange('Best Sellers Books');
   data.forEach(category => {
