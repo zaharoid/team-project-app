@@ -1,3 +1,15 @@
+import { getDatabase } from "firebase/database";
+console.log(getDatabase)
+
+function writeUserData(userId, name, email, ) {
+  
+  // set(ref(db, 'users/' + userId), {
+  //   username: name,
+  //   email: email,
+    
+  // });
+}
+writeUserData()
 const openBtn = document.querySelector('.user-btn');
 openBtn.addEventListener('click', openModal);
 
@@ -33,11 +45,11 @@ function getAuthForm() {
         <form class="form" id="auth-form">
           <h2 class="title-auth">Authentication</h2>
           <div class="form-group">
-            <input class="input-auth" type="email" id="email" required>
+            <input class="input-auth" type="email" id="email"  required>
             <label class="form-text-auth" for="email">Email</label>
           </div>
           <div class="form-group">
-            <input class="input-auth" type="password" id="password" required>
+            <input class="input-auth" type="password" id="password" name="password" required>
             <label class="form-text-auth" for="password">Пароль</label>
           </div>
           <button type="submit" class="submit-btn">Войти</button>
