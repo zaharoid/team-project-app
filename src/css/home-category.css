@@ -56,7 +56,7 @@ padding-bottom: 40px;
 
 .is-active {
     color: var(--is-active-home-category-color);
-
+}
 a.is-active {
      color: rgba(79, 46, 232, 1);
         font-weight: 700;
