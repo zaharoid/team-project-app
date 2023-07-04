@@ -2,6 +2,7 @@ const selectedBookList = document.querySelector('.shopping-list');
 const removeBookBtn = document.querySelector('.remove-book');
 const selectedBooks = JSON.parse(localStorage.getItem('selected')) ?? [];
 
+
 createMarkup(selectedBooks, selectedBookList);
 
 removeBookBtn.addEventListener('click', removeBook)
