@@ -52,6 +52,8 @@ function takeBookMarkupByCategory(books) {
       <li class="book-card render-item-card" data-id="${_id}">
         <div class="thumb">
           <img class="book-cover" src="${book_image}" alt="${title}" loading="lazy" />
+         <div class="overlay-book"><p class="hidden-card">quick view</p>
+       </div>
         </div>
         <h4 class="render-title">${title}</h4>
         <p class="render-author">${author}</p>
