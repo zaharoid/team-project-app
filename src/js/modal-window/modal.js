@@ -1,7 +1,6 @@
 import { fetchBookID } from '../books-api'
-// import { createMarkup } from "./modal-markup";
 
-let modalBody = document.querySelector("body")
+let modalBody = document.querySelector("main")
 let modalOpenWindow = document.querySelector(".modal_window")
 let modalMain = document.querySelector(".modal-main")
 const bookCover = document.querySelector(".modal-cover")
@@ -11,6 +10,9 @@ const modalDescription = document.querySelector(".modal-description")
 const amazon = document.querySelector(".amazon")
 const apple = document.querySelector(".apple")
 const bookShop = document.querySelector(".bookshop")
+const addBookBtn = document.querySelector(".modal-add-btn")
+
+modalBody.style.paddingRight = "0px"
 
 modalBody.addEventListener('click', currentBook)
 
@@ -21,28 +23,33 @@ function currentBook() {
             const bookId = card.dataset.id;
             modalBody.removeEventListener('click', currentBook)
             fetchBookID(bookId).then(data => {
-
-createMarkup(data)
-                // modalOpenWindow.innerHTML = createMarkup(data)
+                createMarkup(data)
+                buttonID(data)
                 blockScroll()
                 eventListeners()
             }).catch((error) => {
-      console.log('Error:', error);
-    });
+                console.log('Error:', error);
+            });
         });
     });
 }
 
+export function buttonID(data) {
+    let buttonId = addBookBtn.setAttribute = data._id
+}
+
 function createMarkup(data) {
-                modalOpenWindow.classList.add("overlay")
+    modalOpenWindow.classList.add("overlay")
+    modalBody.style.paddingRight = "18px"
                 modalMain.style.visibility = "visible"
                 modalMain.style.opacity = "1"
                 bookCover.src = data.book_image
                 bookCover.alt = data.title
                 modalTitle.textContent = data.title
                 modalAuthor.textContent = data.author
-    modalDescription.textContent = data.description
+                modalDescription.textContent = data.description
     topBookShopLink(data)
+                
 }
 
 function topBookShopLink({buy_links}) {
@@ -52,7 +59,7 @@ function topBookShopLink({buy_links}) {
         if (arr.name === "Apple Books") {apple.href =  arr.url}
     })
 }
-    
+
 function eventListeners() {
     const buttonClose = document.querySelector(".modal_btn_close")
     buttonClose.addEventListener("click", closeModal)
@@ -67,12 +74,13 @@ function blockScroll() {
 
 function closeModal() {
     modalBody.classList.remove("no_scroll")
+        modalBody.style.paddingRight = "0px"
     modalOpenWindow.classList.remove("overlay")
                     modalMain.style.visibility = "hidden"
                 modalMain.style.opacity = "0"
-    // modalOpenWindow.innerHTML = ""
     modalBody.removeEventListener('click', onOverlayCloseModal)
     modalBody.removeEventListener('keydown', onEscCloseModal)
+    modalBody.addEventListener('click', currentBook)
 }
 
 function onOverlayCloseModal(e) {
