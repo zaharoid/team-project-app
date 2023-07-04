@@ -11,6 +11,7 @@ const modalDescription = document.querySelector(".modal-description")
 const amazon = document.querySelector(".amazon")
 const apple = document.querySelector(".apple")
 const bookShop = document.querySelector(".bookshop")
+const bookShop6 = document.querySelector(".bookshop")
 
 modalBody.addEventListener('click', currentBook)
 
