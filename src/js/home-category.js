@@ -1,4 +1,4 @@
-import { fetchBookCategories, fetchBookByCategory } from './books-api';
+import { fetchBookCategories, fetchBookByCategory, fetchTopBooks , renderAllCards  } from './books-api';
 const refs = {
   divEl: document.querySelector('.category-list'),
   allcategory: document.querySelector('.all-category'),
@@ -9,13 +9,11 @@ const refs = {
 fetchBookCategories().then(data => {
   data.map(book => {
     const markup = `<li class="list category-item">
-        <a class="link category-link" href="#">${book.list_name}</a>
+        <a class="category-link" href="#">${book.list_name}</a>
       </li>`;
     refs.divEl.insertAdjacentHTML('beforeend', markup);
   });
 });
-
-// refs.allcategory.focus()
 refs.divEl.addEventListener('click', onCategoryClick);
 
 function onCategoryClick(e) {
