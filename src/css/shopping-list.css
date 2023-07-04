@@ -1,6 +1,12 @@
-@import url(./root.css);
+
+
 @import url(./reset.css);
 @import url(./base.css);
+@import url(./header.css);
+@import url(./dark-theme.css);
+@import url(./home__support.css);
+
+
 
 .shopping-list-container {
   width: 100%;
@@ -11,14 +17,26 @@
   padding-right: 20px;
   padding-top: 40px;
 }
+<
+.shopping-list-wrapper{
+  align-items: center;
+}
+.home-support{
+  display: none;
+}
 .title {
   margin-bottom: 40px;
   margin-left: auto;
+  font-family: DM Sans;
+
   font-weight: 600;
   font-size: 32px;
   line-height: 1.18;
   letter-spacing: -0.04em;
+
+
   color: var(--categories-text-color-light);
+
 }
 .title-wrapper {
   color: var(--accent-color);
@@ -67,7 +85,9 @@
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.04em;
+
   color: var(--categories-text-color-light);
+
   margin-bottom: 14px;
 }
 .card-inner-wrapper {
@@ -81,10 +101,29 @@
   line-height: 1.17;
   letter-spacing: -0.04em;
 }
+
+.buy-links-list {
+  display: flex;
+  gap: 8px;
+}
+.amazon{
+  width:32px;
+  height:11px;
+}
+.apple{
+  width:16px;
+  height:16px;
+}
+.bookshop{
+  width:16px;
+  height:16px;
+}
+
 .buy-links-wrapper {
   display: flex;
   gap: 8px;
 }
+
 .buy-link:is(:hover, :focus) {
   box-shadow: var(--icon-hover-shadow);
 }
@@ -103,13 +142,22 @@
 }
 .empty-list-card {
   width: 265px;
+
+  align-items: center;
 }
 .empty-list-text {
   padding-top: 80px;
+  font-family: DM Sans;
+
+}
+
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.02em;
+  text-align: center;
+  color:var(--categories-text-color-light);
+
 }
 .empty-list-image {
   width: 265px;
@@ -159,15 +207,45 @@
     width: 18px;
     height: 18px;
   }
+
+  .buy-links-list {
+    gap: 16px;
+  }
+  .amazon{
+    width:48px;
+    height:15px;
+  }
+  .apple{
+    width:28px;
+    height:27px;
+  }
+  .bookshop{
+    width:32px;
+    height:30px;
+  }
+
   .buy-links-wrapper {
     gap: 16px;
   }
+
   .empty-list-text {
     padding-top: 100px;
   }
 }
 @media screen and (min-width: 1440px) {
   .shopping-list-container {
+
+    display:flex;
+    gap:40px;
     max-width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+.home-support{
+  display: block;
+}
+}
+
   }
 }
+
