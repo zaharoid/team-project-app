@@ -12,8 +12,15 @@
 
 .support__img {
   filter: grayscale(100%) brightness(0) invert(100%);
+<<<<<<< Updated upstream
    transition: filter var(--transition-duration) var(--animation),
   transform var(--transition-duration) var(--animation);
+=======
+  padding-left: 16px;
+   transition: filter var(--animation),
+  transform var(--animation);
+
+>>>>>>> Stashed changes
 }
 
 .js-target:hover .support__img,
@@ -47,8 +54,7 @@
   display: flex;
   padding-left: 40px;
   font-family: var(--primary-font);
-  color: var(--categories-text-dark);
-  color: var(--title-text-color-dark);
+  color: #FFFFFF;
   font-weight: 700;
   margin-top: 16px;
   font-size: 28px;
@@ -103,7 +109,8 @@
   justify-content: center;
   justify-self: center;
   align-self: flex-end;
-  margin-bottom: 24px;
+  margin-bottom: 24px; 
+  margin-top: 40px;
   background-color: #FFFFFF;
   border-radius: 50;
   transition: background-color var(--animation);
@@ -140,7 +147,7 @@
 }
 
 .support-svg {
-  fill: var(--categories-text-color-dark);
+  fill: #FFFFFF;
   margin-left: 12px;
 }
 
@@ -161,6 +168,10 @@
 .support-link {
   margin-bottom: 20px;
 }
+.support-link:last-child {
+  margin-bottom: 0;
+}
+
 
 .slider-container{
   overflow: hidden;
