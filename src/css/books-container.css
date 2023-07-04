@@ -1,37 +1,47 @@
-
-.bookslist{
+.bookslist {
   display: flex;
 }
-.book-cover{
+
+.book-cover {
   width: 180px;
   height: 256px;
   border-radius: 8px;
 }
 
-.booklist-container{
+.booklist-container {
   width: 998px;
 }
 
-.book-card{
+.book-card {
   width: 180px;
   height: 306px;
 }
 
-.bookslist .book-card + .book-card {
+.bookslist .book-card+.book-card {
   margin-left: 24px;
 }
 
-.books-in-categories-list .category-item + .category-item {
+.books-in-categories-list .category-item+.category-item {
   margin-top: 40px;
 }
 
-.button-container{
+.button-container {
   display: flex;
   flex-direction: row-reverse;
 }
-.book-title{
+
+.book-title {
   font-size: 16px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--book-title-books-container-color);
+}
+
+.author-text-color {
+  color: var(--books-container-author-text-color);
+}
+
+.description-book-cont-color {
+  color: var(--books-container-author-text-color);
 }
