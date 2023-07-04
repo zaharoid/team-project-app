@@ -6,7 +6,7 @@ const refs = {
 fetchTopBooks().then(renderAllCards);
 async function renderAllCards(data) {
   let booksArr = [];
-  refs.booklistTitle.innerHTML = lastWordChange("Best Sellers Books");
+  refs.booklistTitle.innerHTML = lastWordChange('Best Sellers Books');
   data.forEach(category => {
     let markup_base = `<li class="category-item">
     <h3 class="book-category-title">${category.books[0].list_name}</h3>
@@ -18,7 +18,7 @@ async function renderAllCards(data) {
       markup =
         markup +
         `
-      <li class="book-card book-card-main">
+      <li class="book-card book-card-main" data-id="${book._id}">
         <div class="thumb">
           <img class="book-cover" src="${book.book_image}" alt="${book.title}" loading="lazy" />
         </div>
@@ -43,7 +43,7 @@ async function renderAllCards(data) {
 refs.categoriesList.addEventListener('click', onMoreBtnClick);
 
 function onMoreBtnClick(e) {
-  if (e.target.nodeName !== "BUTTON") {
+  if (e.target.nodeName !== 'BUTTON') {
     return;
   }
 
@@ -51,7 +51,10 @@ function onMoreBtnClick(e) {
 }
 
 export function lastWordChange(string) {
-  let markup = `${string.slice(0, string.lastIndexOf(" "))}
-    <span class="category-last-word">${string.slice(string.lastIndexOf(" "), string.length)}</span>`;
+  let markup = `${string.slice(0, string.lastIndexOf(' '))}
+    <span class="category-last-word">${string.slice(
+      string.lastIndexOf(' '),
+      string.length
+    )}</span>`;
   return markup;
 }
