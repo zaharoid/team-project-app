@@ -10,6 +10,7 @@ const removeBookBtn = document.querySelector('.remove-book');
 const selectedBooks = JSON.parse(localStorage.getItem('selected')) ?? [];
 console.log(selectedBooks.length>0);
 
+
 createMarkup(selectedBooks, selectedBookList);
 
 if(selectedBooks.length>0){
