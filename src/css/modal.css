@@ -1,0 +1,157 @@
+.no_scroll {
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--categories-text-color-light);
+  z-index: 20;
+  transition: 0.3s all;
+}
+
+.modal-main {
+  opacity: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  min-width: 320px;
+  max-width: 335px;
+  border: 2px solid rgba(17, 17, 17, 1);
+  border-radius: 18px;
+  padding: 40px 24px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  background-color: var(--header-bg-color-light);
+}
+
+.modal_btn_close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  line-height: 0;
+  background-color: var(--header-bg-color-light);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-cover {
+  margin: 0 auto 14px auto;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--logo-color-text);
+  margin-bottom: 4px;
+}
+
+.modal-author {
+  font-family: var(--primery-font);
+  font-style: italic;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--secondary-text-color);
+  margin-bottom: 18px;
+
+  line-height: 14px;
+}
+
+.modal-add-btn {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--logo-color-text);
+  background-color: var(--header-bg-color-light);
+  margin: 0 auto;
+  border: 2px solid var(--is-active-home-category-color);
+  border-radius: 40px;
+  padding: 14px 28px;
+}
+
+.modal-svg {
+  margin: 0;
+  padding: 0;
+  stroke: var(--logo-color-text);
+}
+
+.modal-description {
+  font-family: var(--primery-font);
+  width: 287px;
+  color: var(--logo-color-text);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 14px;
+}
+
+.modal-books-shops {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-main {
+    box-sizing: border-box;
+    min-width: 579px;
+    padding: 40px;
+  }
+
+  .modal-title {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 8px;
+  }
+
+  .modal-author {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+
+  .modal-description {
+    width: 279px;
+    color: var(--logo-color-text);
+    margin-bottom: 20px;
+  }
+
+  .modal-add-btn {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 auto;
+    border: 2px solid var(--is-active-home-category-color);
+    border-radius: 40px;
+    width: 499px;
+    padding: 20px 0;
+  }
+
+  .modal-cover {
+    width: 192px;
+    height: 281px;
+    margin: 0;
+  }
+
+  .modal_book_info {
+    display: flex;
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+
+  .modal_text_info {
+    display: flex;
+    flex-direction: column;
+  }
+}

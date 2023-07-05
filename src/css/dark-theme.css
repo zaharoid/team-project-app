@@ -1,91 +1,10 @@
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+.dark-theme {
+    --base-bg-color: #202024;
+    --primery-bg-color-light: #111111;
+    --logo-color-text: #F3F3F3;
+    --link-home-and-shopping-list-color: #ffffff;
+    --categories-text-color-light: rgba(255, 255, 255, 0.60);
+    --is-active-home-category-color: #eac645;
+    --book-title-books-container-color: #ffffff;
+    --books-container-author-text-color: #B4AFAF;
 }
-
-/* Hide default HTML checkbox */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* The slider */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked+.slider {
-    background-color: #2196F3;
-}
-
-input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-/* styles for theme */
-.dark {
-    background-color: #111111;
-
-}
-
-.categories-text-color-dark {
-    color: #fff
-}
-
-.color-grey {
-    color: #B4AFAF
-}
-
-/* --accent-color: #4F2EE8;
---hover-book-color: #EAC645;
---categories-text-color-light: #111111;
---categories-text-color-dark: #fff;
---logo-color-text: #111111;
---primery-bg-color-light: #F6F6F6;
---primery-bg-color-dark: #202024;
---primery-font: 'DM Sans',
-Sans-serif;
---primery-text-color-dark: #F3F3F3;
---header-bg-color-light: #fff;
---header-bg-color-dark: #000;
---secondary-text-color: #B4AFAF;
---animation: 250ms cubic-bezier(0.4, 0, 0.2, 1); */

@@ -1,3 +1,4 @@
+
 import './home__support';
 import './dark-theme';
 import './modal-window/modal';
@@ -23,6 +24,7 @@ if(refs.selectedBooks.length>0){
   removeBookBtn.addEventListener('click', removeBook);
 }
 
+
 function createMarkup(arr, selectedBookList) {
   let markup;
   if (arr.length) {
@@ -37,14 +39,34 @@ function createMarkup(arr, selectedBookList) {
           description,
           buy_links,
         }) => ` <li class="book-card data-id="${_id}" >
+
           <div class="book-image-wrapper"><img src="${book_image}" alt="${title}" class="book-image" onerror="this.src=${bookImagePlaceholder};"></div>
+
+
+
           <div class="book-info">
               <h2 class="book-title">${title}</h2>
               <p class="book-category">${list_name}</p>
               <p class="book-descr">${description}</p>
               <div class="card-inner-wrapper">
                   <h3 class="book-author">${author}</h3>
+
+
                   <ul class="buy-links-list">${createBuyLinks(buy_links)}</ul>  
+
+                  <div class="buy-links-wrapper">
+                  <svg class="buy-link">
+      <use href="./images/icons.svg#icon-trash"></use>
+    </svg>
+    <svg class="buy-link">
+      <use href="./images/icons.svg#icon-trash"></use>
+    </svg>
+    <svg class="buy-link">
+      <use href="./images/icons.svg#icon-trash"></use>
+    </svg>
+                  </div>
+
+
               </div>
               <button type="button" class="remove-book">
               <svg class="remove-image">
@@ -55,12 +77,14 @@ function createMarkup(arr, selectedBookList) {
           
           
       </li>`
+
       )
       .join('');
   } else {
     markup = `<li class="empty-list-card">
       <p class="empty-list-text">This page is empty, add some books and proceed to order.</p>
       <img src=${noBooksImage} alt="No books added" class="empty-list-image">
+
     </li>`;
   }
   selectedBookList.innerHTML = markup;
@@ -87,6 +111,7 @@ function createBuyLinks(arr) {
       <a href="${data.url}" target="_blank">
       <svg class="buy-link apple">
       <use href="${svgIcons}#icon-apple"></use>
+
       </svg></a>
       </li>`;
       }
@@ -107,3 +132,4 @@ function findBook(elem) {
   const bookId = elem.closest('.book-card').dataset.id;
   return refs.selectedBooks.find(({ id }) => id === bookId);
 }
+
