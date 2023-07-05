@@ -49,7 +49,7 @@ function onRemoveBtnClick() {
   for (const book of books) {
     const bookId = books.indexOf(book);
     books.splice(bookId, 1);
-    closeModal();
+    // closeModal();
     addBookBtn.textContent = 'ADD TO SHOPPING LIST';
     console.log(books);
   }
@@ -65,7 +65,7 @@ function onAddBtnClick() {
   addBookBtn.setAttribute('data-remove');
   console.log(books);
 
-  closeModal();
+//   closeModal();
 
   Notiflix.Notify.success('Book successfully added!');
   addBookBtn.textContent = 'REMOVE FROM THE SHOPPING LIST';
@@ -76,7 +76,7 @@ function onAddBtnClick() {
 }
 
 function checkModalInfo(bookId) {
-  addBookBtn.textContent = 'ADD TO SHOPPING LIST';
+//   addBookBtn.textContent = 'ADD TO SHOPPING LIST';
 
   const booksToBuy = JSON.parse(localStorage.getItem('booksToBuy'));
 
@@ -84,10 +84,15 @@ function checkModalInfo(bookId) {
     if (book.id === bookId) {
       console.log('book.id', book.id);
       console.log('bookId', bookId);
-      addBookBtn.textContent = 'REMOVE FROM THE SHOPPING LIST';
+        addBookBtn.textContent = 'REMOVE FROM THE SHOPPING LIST';
+        // addBookBtn.addEventListener("click", removeBook)
     }
   });
 }
+
+// function removeBook() {
+    
+// }
 
 function getDataFromModal() {
   return {
