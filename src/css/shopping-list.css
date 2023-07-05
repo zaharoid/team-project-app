@@ -6,7 +6,9 @@
 @import url(./home__support.css);
 
 
-
+body{
+  font-family: DM Sans;
+}
 .shopping-list-container {
   width: 100%;
   min-width: 320px;
@@ -15,6 +17,7 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;
+  background-color: var(--primery-bg-color-light);
 }
 
 .shopping-list-wrapper{
@@ -39,6 +42,11 @@
 .title-wrapper {
   color: var(--accent-color);
 }
+.shopping-list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .book-card {
   position: relative;
   display: flex;
@@ -47,7 +55,7 @@
   background-color: var(--header-bg-color-light);
   border-radius: 16px;
   border-width: 2px;
-  border-color: #4f2ee8 40%;
+  border-color: var(--accent-color);
 }
 .book-image-wrapper {
   width: 100px;
@@ -81,12 +89,11 @@
   height: 68px;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.28;
+  line-height: 1.08;
   letter-spacing: -0.04em;
-
   color: var(--logo-color-text);
-
   margin-bottom: 14px;
+  overflow: scroll;
 }
 .card-inner-wrapper {
   display: flex;
@@ -98,6 +105,7 @@
   font-style: italic;
   line-height: 1.17;
   letter-spacing: -0.04em;
+  color: var(--secondary-text-color);
 }
 
 .buy-links-list {
@@ -139,6 +147,8 @@
 .remove-image {
   width: 12px;
   height: 12px;
+  fill:var(--accent-color);
+  stroke: white;
 }
 .empty-list-card {
   width: 265px;
@@ -148,7 +158,6 @@
 .empty-list-text {
   padding-top: 80px;
   font-family: DM Sans;
-
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28;
