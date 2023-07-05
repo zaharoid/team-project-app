@@ -2,6 +2,7 @@ import { fetchTopBooks } from './books-api';
 const refs = {
   categoriesList: document.querySelector('.books-in-categories-list'),
   booklistTitle: document.querySelector('.booklist-title'),
+  loader: document.querySelector('#loader'),
 };
 
 localStorage.setItem('booksToBuy', JSON.stringify([]));
@@ -42,7 +43,8 @@ export async function renderAllCards(data) {
       </li>`;
     refs.categoriesList.insertAdjacentHTML('beforeend', markup_base);
   });
-
+  refs.categoriesList.classList.toggle('is-hidden')
+  refs.loader.classList.toggle('is-hidden')
   localStorage.setItem('books', JSON.stringify(booksArr));
 }
 

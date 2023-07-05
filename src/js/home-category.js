@@ -7,6 +7,7 @@ const refs = {
   allcategory: document.querySelector('.all-category'),
   onecategoryEl: document.querySelector('.category-link'),
   categoriesList: document.querySelector('.books-in-categories-list'),
+  loader: document.querySelector('#loader'),
 };
 
 refs.divEl.classList.add('is-hidden');
@@ -51,6 +52,8 @@ function onCategoryClick(e) {
     );
   }
   else {
+    refs.categoriesList.classList.toggle('is-hidden')
+  refs.loader.classList.toggle('is-hidden')
     
     refs.categoriesList.innerHTML = "";
     titleCategory.innerHTML = lastWordChange("Best Sellers Books");
@@ -61,6 +64,10 @@ function onCategoryClick(e) {
 
 }
 function takeBookMarkupByCategory(books) {
+
+  refs.categoriesList.classList.remove('is-hidden')
+  refs.loaderEl.classList.add('is-hidden')
+
   let markup = books
     .map(({ author, title, book_image, _id }) => {
       return `
