@@ -14,7 +14,7 @@
   display: flex;
 }
 
-.book-cover-container{
+.book-cover-container {
   margin-bottom: 14px;
   /* outline: .5px solid var(--header-bg-color-dark);
   outline-offset: -.5px; */
@@ -24,7 +24,6 @@
   border-radius: 8px;
   width: 335px;
   height: 485px;
-  
 }
 
 .book-card {
@@ -63,7 +62,7 @@
   padding-right: 28px;
   padding-left: 28px;
   border-radius: 40px;
-  border: 2px solid #4f2ee8;
+  border: 2px solid var(--accent-color);
   background-color: transparent;
   color: var(--logo-color-text);
   font-size: 14px;
@@ -71,6 +70,13 @@
   line-height: 18px;
   letter-spacing: -0.14px;
   text-transform: uppercase;
+  transition: background-color var(--animation), color var(--animation);
+}
+
+.see-more-btn:hover,
+.see-more-btn:focus {
+  background-color: var(--accent-color);
+  color: var(--header-bg-color-light);
 }
 
 .books-in-categories-list .category-item + .category-item {
@@ -127,6 +133,9 @@
 
 /* tablet */
 @media screen and (min-width: 768px) and (max-width: 1439px) {
+  .booklist-container {
+    margin-top: 100px;
+  }
   .bookslist .book-card + .book-card {
     margin-left: 25px;
   }
@@ -179,6 +188,16 @@
   .booklist-container {
     margin-left: 40px;
   }
+  .bookslist {
+    margin-bottom: 32px;
+  }
+
+  .booklist-title {
+    font-size: 48px;
+    line-height: 52px;
+    letter-spacing: -1.92px;
+  }
+
   .book-card {
     width: 180px;
     height: 306px;
