@@ -45,3 +45,7 @@
 .description-book-cont-color {
   color: var(--books-container-author-text-color);
 }
+
+.accent-color {
+  color: var(--accent-color);
+}

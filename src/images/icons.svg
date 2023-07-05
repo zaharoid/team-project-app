@@ -9,10 +9,10 @@
     </symbol>
     <symbol id="icon-logo" viewBox="0 0 32 32">
       <path d="m0 0 16.343 16.172L32 32V0H0z" />
-      <path d="M4.457 4.229 16.4 16.058l11.257 11.486h-23.2V4.23z" />
-      <path d="M27.733 27.618 15.79 15.789 4.533 4.303h23.2v23.314z" />
-      <path d="m9.257 9.029 13.6 13.6h-13.6v-13.6z" />
-      <path d="m9.257 9.029 13.6 13.6v-13.6h-13.6z" />
+      <path  d="M4.457 4.229 16.4 16.058l11.257 11.486h-23.2V4.23z" />
+      <path  d="M27.733 27.618 15.79 15.789 4.533 4.303h23.2v23.314z" />
+      <path  d="m9.257 9.029 13.6 13.6h-13.6v-13.6z" />
+      <path  d="m9.257 9.029 13.6 13.6v-13.6h-13.6z" />
     </symbol>
     <symbol id="icon-mail-02" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.286"
@@ -23,7 +23,7 @@
         d="M22.667 14.667v-4a6.667 6.667 0 0 0-13.334 0v4M10.4 28h11.2c2.24 0 3.36 0 4.216-.436a3.991 3.991 0 0 0 1.748-1.748C28 24.96 28 23.84 28 21.6v-.533c0-2.24 0-3.36-.436-4.216a3.991 3.991 0 0 0-1.748-1.748c-.856-.436-1.976-.436-4.216-.436H10.4c-2.24 0-3.36 0-4.216.436a3.996 3.996 0 0 0-1.748 1.748C4 17.707 4 18.827 4 21.067v.533c0 2.24 0 3.36.436 4.216a3.991 3.991 0 0 0 1.748 1.748C7.04 28 8.16 28 10.4 28z" />
     </symbol>
     <symbol id="icon-x-close" viewBox="0 0 32 32">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.429"
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.429" fill='transparent'
         d="M24 8 8 24M8 8l16 16" />
     </symbol>
     <symbol id="icon-align-left" viewBox="0 0 32 32">
@@ -115,13 +115,13 @@
         d="M25.395 21.134a3.675 3.675 0 0 0 2.603 1.085 3.67 3.67 0 0 0 2.603-1.085l16.794-16.83a3.675 3.675 0 0 1 2.603-1.085 3.67 3.67 0 0 1 2.603 6.255l-16.83 16.83a11 11 0 0 1-15.546 0L3.395 9.474a3.669 3.669 0 0 1-.791-3.975A3.659 3.659 0 0 1 4.588 3.5a3.651 3.651 0 0 1 2.82 0c.447.186.852.459 1.193.803l16.793 16.83z" />
     </symbol>
     <symbol id="icon-logo-002" viewBox="0 0 31 32">
-      <path fill="#f6f6f6" d="m0 .615 15.714 15.549 15.055 15.22V.615H0z" style="fill:var(--color1, #f6f6f6)" />
+      <path fill="#f6f6f6" d="m0 .615 15.714 15.549 15.055 15.22V.615H0z" style="fill:var(--color3, #f6f6f6)" />
       <path fill="#f6f6f6" d="m4.285 4.681 11.484 11.374 10.824 11.044H4.285V4.681z"
-        style="fill:var(--color1, #f6f6f6)" />
+        style="fill:var(--color3, #f6f6f6)" />
       <path fill="#4f2ee8" d="M26.666 27.171 15.183 15.797 4.359 4.753h22.308v22.418z"
         style="fill:var(--color2, #4f2ee8)" />
       <path fill="#4f2ee8" d="m8.901 9.297 13.077 13.077H8.901V9.297z" style="fill:var(--color2, #4f2ee8)" />
-      <path fill="#f6f6f6" d="m8.901 9.297 13.077 13.077V9.297H8.901z" style="fill:var(--color1, #f6f6f6)" />
+      <path fill="#f6f6f6" d="m8.901 9.297 13.077 13.077V9.297H8.901z" style="fill:var(--color3, #f6f6f6)" />
     </symbol>
     <symbol id="arrow-narrow-right" viewBox="0 0 32 32">
       <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2"

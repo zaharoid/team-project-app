@@ -1,16 +1,4 @@
-.dark-theme {
-    --base-bg-color: #202024;
-    --primery-bg-color-light: #111111;
-    --logo-color-text: #F3F3F3;
-    --link-home-and-shopping-list-color: #ffffff;
-    --categories-text-color-light: rgba(255, 255, 255, 0.60);
-    --is-active-home-category-color: #eac645;
-    --book-title-books-container-color: #ffffff;
-    --books-container-author-text-color: #B4AFAF;
-    --color1: #fff;
-    --modal-border-color: #fff;
-}
-
+/* heart animotions styles */
 .heart {
     position: absolute;
     margin-left: 50%;

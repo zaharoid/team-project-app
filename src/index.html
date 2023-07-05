@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page title</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" />
+<link rel="stylesheet" href="./css/styles.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-    
-  </head>
-  <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/header.html"></include>
-    <include src="./partials/modal-auth.html"></include>
-    
-    <main>
-      <div class="main-container">
-        <aside class="sidebar-container">
-          <include src="./partials/home_category.html"></include>
-          <include src="./partials/home__support.html"></include>
-        </aside>
-        <section>
-          <include src="./partials/books-container.html"></include>
-        </section>
-      </div>
-      <include src="./partials/books-category.html"></include>
-          <include src="./partials/modal_window.html"></include>
-    </main>
-    <script type="module" src="./js/index.js"></script>
-  </body>
+
+</head>
+
+<body>
+  <!-- ❗️❗️❗️ Add partials like so for every page -->
+  <include src="./partials/header.html"></include>
+  <include src="./partials/modal-auth.html"></include>
+
+  <main>
+    <div class="main-container">
+      <aside class="sidebar-container">
+        <include src="./partials/home_category.html"></include>
+        <include src="./partials/home__support.html"></include>
+      </aside>
+      <section>
+        <include src="./partials/books-container.html"></include>
+      </section>
+    </div>
+    <include src="./partials/books-category.html"></include>
+    <include src="./partials/modal_window.html"></include>
+  </main>
+  <script type="module" src="./js/index.js"></script>
+  <footer>
+
+    <include src="./partials/footer-heart.html"></include>
+  </footer>
+</body>
+
 </html>
-

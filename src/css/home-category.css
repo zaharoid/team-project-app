@@ -1,7 +1,7 @@
 .section-category {
 
-padding-top: 40px;
-padding-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
 }
 
@@ -57,17 +57,18 @@ padding-bottom: 40px;
 .is-active {
     color: var(--is-active-home-category-color);
 }
+
 a.is-active {
-     color: rgba(79, 46, 232, 1);
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 16px;
-        line-height: 1.33;
+    color: var(--is-active-home-category-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1.33;
 
 }
 
 a.category-link:hover {
-color: rgba(79, 46, 232, 1);
+    color: var(--is-active-home-category-color);
     font-weight: 700;
     text-transform: uppercase;
     font-size: 16px;
@@ -95,10 +96,11 @@ color: rgba(79, 46, 232, 1);
     .category-list {
         gap: 32px;
     }
-.category-link {
-    font-size: 18px;
-    font-weight: 1.33;
-}
+
+    .category-link {
+        font-size: 18px;
+        font-weight: 1.33;
+    }
 
 }
 
