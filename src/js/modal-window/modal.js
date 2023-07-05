@@ -12,8 +12,8 @@ const amazon = document.querySelector('.amazon');
 const apple = document.querySelector('.apple');
 const bookShop = document.querySelector('.bookshop');
 
-const addBookBtn = document.querySelector('.modal-add-btn');
-const removeBookBtn = document.querySelector('[data-remove]');
+const addBookBtn = document.querySelector('[data-action="add"]');
+const booksInList = document.querySelector('.books-in-categories-list');
 
 modalBody.style.paddingRight = '0px';
 
@@ -24,12 +24,11 @@ function currentBook() {
   bookCards.forEach(card => {
     card.addEventListener('click', e => {
       const bookId = card.dataset.id;
-      checkModalInfo(bookId);
       modalBody.removeEventListener('click', currentBook);
       fetchBookID(bookId)
         .then(data => {
           createMarkup(data);
-
+          toggleTextContentButton(data);
           blockScroll();
           eventListeners();
         })
@@ -40,30 +39,30 @@ function currentBook() {
   });
 }
 
-addBookBtn.addEventListener('click', onAddBtnClick);
+addBookBtn.addEventListener('click', onBtnClick);
 
-removeBookBtn.addEventListener('click', onRemoveBtnClick);
-
-function onRemoveBtnClick() {
-  const books = JSON.parse(localStorage.getItem('booksToBuy'));
-  for (const book of books) {
-    const bookId = books.indexOf(book);
-    books.splice(bookId, 1);
-    // closeModal();
-    addBookBtn.textContent = 'ADD TO SHOPPING LIST';
-    console.log(books);
-  }
-}
-
-function onAddBtnClick() {
+function onBtnClick() {
   const bookFromModal = getDataFromModal();
 
   const books = JSON.parse(localStorage.getItem('booksToBuy'));
 
+  for (const book of books) {
+    if (bookFromModal.id === book.id) {
+      console.log('bookFromModal', bookFromModal.id);
+      console.log('book.id', book.id);
+      const bookId = books.indexOf(book);
+      books.splice(bookId, 1);
+      localStorage.setItem('booksToBuy', JSON.stringify(books));
+      closeModal();
+      addBookBtn.textContent = 'ADD TO SHOPPING LIST';
+
+      console.log(books);
+      return;
+    }
+  }
+
   books.push(bookFromModal);
   localStorage.setItem('booksToBuy', JSON.stringify(books));
-  addBookBtn.setAttribute('data-remove');
-  console.log(books);
 
 //   closeModal();
 
@@ -75,19 +74,9 @@ function onAddBtnClick() {
   console.log(booksToBuy);
 }
 
-function checkModalInfo(bookId) {
-//   addBookBtn.textContent = 'ADD TO SHOPPING LIST';
-
-  const booksToBuy = JSON.parse(localStorage.getItem('booksToBuy'));
-
-  booksToBuy.forEach(book => {
-    if (book.id === bookId) {
-      console.log('book.id', book.id);
-      console.log('bookId', bookId);
-        addBookBtn.textContent = 'REMOVE FROM THE SHOPPING LIST';
-        // addBookBtn.addEventListener("click", removeBook)
-    }
-  });
+function toggleTextContentButton(book) {
+  const booksFromLS = JSON.parse(localStorage.getItem('booksToBuy'));
+  console.log(booksFromLS);
 }
 
 // function removeBook() {
@@ -101,6 +90,8 @@ function getDataFromModal() {
     image: bookCover.src,
     author: modalAuthor.textContent,
     description: modalDescription.textContent,
+    category: modalTitle.dataset.category,
+    links: [amazon.href, bookShop.href, apple.href],
   };
 }
 
@@ -112,8 +103,10 @@ function createMarkup(data) {
   bookCover.src = data.book_image;
   bookCover.alt = data.title;
   modalTitle.textContent = data.title;
+  modalTitle.dataset.category = data.list_name;
   modalAuthor.textContent = data.author;
   modalDescription.textContent = data.description;
+
   modalTitle.setAttribute('data-id', `${data._id}`);
   topBookShopLink(data);
 }
@@ -154,6 +147,7 @@ function closeModal() {
   modalMain.style.opacity = '0';
   modalBody.removeEventListener('click', onOverlayCloseModal);
   modalBody.removeEventListener('keydown', onEscCloseModal);
+  modalBody.removeEventListener('click', currentBook);
   modalBody.addEventListener('click', currentBook);
 }
 
