@@ -3,6 +3,9 @@ const refs = {
   categoriesList: document.querySelector('.books-in-categories-list'),
   booklistTitle: document.querySelector('.booklist-title'),
 };
+
+localStorage.setItem('booksToBuy', JSON.stringify([]));
+
 fetchTopBooks().then(renderAllCards);
 export async function renderAllCards(data) {
   let booksArr = [];
