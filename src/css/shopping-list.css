@@ -1,5 +1,4 @@
 
-
 @import url(./reset.css);
 @import url(./base.css);
 @import url(./header.css);
@@ -34,8 +33,7 @@
   line-height: 1.18;
   letter-spacing: -0.04em;
 
-
-  color: var(--categories-text-color-light);
+  color: var(--logo-color-text);
 
 }
 .title-wrapper {
@@ -86,7 +84,7 @@
   line-height: 1.28;
   letter-spacing: -0.04em;
 
-  color: var(--categories-text-color-light);
+  color: var(--logo-color-text);
 
   margin-bottom: 14px;
 }
@@ -119,10 +117,12 @@
   height:16px;
 }
 
+
 .buy-links-wrapper {
   display: flex;
   gap: 8px;
 }
+
 
 .buy-link:is(:hover, :focus) {
   box-shadow: var(--icon-hover-shadow);
@@ -148,8 +148,6 @@
 .empty-list-text {
   padding-top: 80px;
   font-family: DM Sans;
-
-
 
   font-weight: 400;
   font-size: 14px;
@@ -224,9 +222,11 @@
     height:30px;
   }
 
+
   .buy-links-wrapper {
     gap: 16px;
   }
+
 
   .empty-list-text {
     padding-top: 100px;
@@ -245,5 +245,4 @@
   display: block;
 }
 }
-
 

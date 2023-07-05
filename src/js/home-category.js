@@ -8,6 +8,10 @@ const refs = {
   categoriesList: document.querySelector('.books-in-categories-list'),
 };
 fetchBookCategories().then(data => {
+   const firstCategoryMarkup = `<li class="list category-item">
+            <a class="link category-link is-active" href="#" id="all">All categories</a>
+        </li>`
+  refs.divEl.insertAdjacentHTML('beforeend', firstCategoryMarkup);
   data.map(book => {
     const markup = `<li class="list category-item">
         <a class="link category-link" href="#">${book.list_name}</a>
@@ -55,8 +59,8 @@ function takeBookMarkupByCategory(books) {
          <div class="overlay-book"><p class="hidden-card">quick view</p>
        </div>
         </div>
-        <h4 class="render-title">${title}</h4>
-        <p class="render-author">${author}</p>
+        <h4 class="book-title">${title}</h4>
+        <p class="book-author-name">${author}</p>
       </li>`;
     })
     .join('');
@@ -64,4 +68,28 @@ function takeBookMarkupByCategory(books) {
 }
 function renderMarkupBooksByCategory(markup) {
   refs.categoriesList.innerHTML = markup;
+}
+
+refs.categoriesList.addEventListener('click', onMoreBtnClick);
+
+function onMoreBtnClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  let activeBook = document.querySelector('.is-active')
+    activeBook.classList.remove('is-active');
+
+  const links = document.querySelectorAll(".category-link");
+  links.forEach(link => {
+    if (link.textContent === e.target.getAttribute('data-category-name')) {
+      link.classList.add('is-active');
+      link.scrollIntoView();
+    }
+  });
+    let titleCategory = document.querySelector('.booklist-title');
+    titleCategory.innerHTML = lastWordChange(e.target.getAttribute('data-category-name'));
+    refs.categoriesList.classList.add('render-category');
+    fetchBookByCategory(e.target.getAttribute('data-category-name')).then(data =>
+      renderMarkupBooksByCategory(takeBookMarkupByCategory(data))
+    );
 }

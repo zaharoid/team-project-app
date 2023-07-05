@@ -29,7 +29,7 @@ export async function renderAllCards(data) {
           </div>
         </div>
         <h4 class="book-title">${book.title}</h4>
-        <p class=book-author-name>${book.author}</p>
+        <p class="book-author-name">${book.author}</p>
       </li>`;
     });
     markup_base =
@@ -46,15 +46,8 @@ export async function renderAllCards(data) {
   localStorage.setItem('books', JSON.stringify(booksArr));
 }
 
-refs.categoriesList.addEventListener('click', onMoreBtnClick);
 
-function onMoreBtnClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
 
-  //console.log(e.target.getAttribute('data-category-name'))
-}
 
 export function lastWordChange(string) {
   let markup = `${string.slice(0, string.lastIndexOf(' '))}

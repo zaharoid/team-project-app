@@ -103,15 +103,15 @@ function onClick(evt) {
 }
 
 let position = 0;
-let slidesToShow = 6;
-let slidesToScroll = 1;
+let slidesToShow = 5;
+let slidesToScroll = 2;
 
 const container = document.querySelector('.slider-container');
 const list = document.querySelector('.support-list');
 const sliderButton = document.querySelector('.slider-button');
 const itemsSupport = document.querySelectorAll('.support-link');
 let itemsCount = itemsSupport.length;
-const sliderItemHeight = 32;
+const sliderItemHeight = 20;
 const movePosition = slidesToScroll * sliderItemHeight;
 
 itemsSupport.forEach((item) => {
@@ -155,4 +155,26 @@ function getItemsBottom() {
   } else {
     return itemsCount - (Math.abs(position) + slidesToShow * sliderItemHeight) / 55;
   }
+}
+
+const supportButtonSvg = document.querySelector('.support-button-svg');
+
+const observer = new MutationObserver((mutationsList) => {
+  for (const mutation of mutationsList) {
+    if (mutation.attributeName === 'style') {
+      const transformStyle = supportList.style.transform;
+      if (transformStyle.includes('translateY(-200px)')) {
+        supportButtonSvg.classList.add('support-button-svg--reversed');
+      } else {
+        supportButtonSvg.classList.remove('support-button-svg--reversed');
+      }
+    }
+  }
+});
+
+observer.observe(supportList, { attributes: true });
+
+const initialTransformStyle = supportList.style.transform;
+if (initialTransformStyle.includes('translateY(-200px)')) {
+  supportButtonSvg.classList.add('support-button-svg--reversed');
 }
