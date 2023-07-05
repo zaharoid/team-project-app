@@ -4,11 +4,17 @@ const refs = {
   booklistTitle: document.querySelector('.booklist-title'),
 };
 
-localStorage.setItem('booksToBuy', JSON.stringify([]));
+checkLocalStorage();
+
+function checkLocalStorage() {
+  if (localStorage.getItem('booksToBuy')) {
+    return;
+  }
+  localStorage.setItem('booksToBuy', JSON.stringify([]));
+}
 
 fetchTopBooks().then(renderAllCards);
 export async function renderAllCards(data) {
-  let booksArr = [];
   refs.booklistTitle.innerHTML = lastWordChange('Best Sellers Books');
   data.forEach(category => {
     let markup_base = `<li class="category-item">
@@ -17,7 +23,6 @@ export async function renderAllCards(data) {
     let markup = ``;
 
     category.books.map(book => {
-      booksArr.push(book);
       markup =
         markup +
         `
@@ -42,12 +47,7 @@ export async function renderAllCards(data) {
       </li>`;
     refs.categoriesList.insertAdjacentHTML('beforeend', markup_base);
   });
-
-  localStorage.setItem('books', JSON.stringify(booksArr));
 }
-
-
-
 
 export function lastWordChange(string) {
   let markup = `${string.slice(0, string.lastIndexOf(' '))}
