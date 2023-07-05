@@ -50,7 +50,7 @@ function takeBookMarkupByCategory(books) {
     .map(({ author, title, book_image, _id }) => {
       return `
       <li class="book-card render-item-card" data-id="${_id}">
-        <div class="thumb">
+        <div class="thumb book-cover-container">
           <img class="book-cover" src="${book_image}" alt="${title}" loading="lazy" />
          <div class="overlay-book"><p class="hidden-card">quick view</p>
        </div>
