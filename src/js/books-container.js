@@ -2,6 +2,7 @@ import { fetchTopBooks } from './books-api';
 const refs = {
   categoriesList: document.querySelector('.books-in-categories-list'),
   booklistTitle: document.querySelector('.booklist-title'),
+  loader: document.querySelector('#loader')
 };
 
 checkLocalStorage();
@@ -15,6 +16,8 @@ function checkLocalStorage() {
 
 fetchTopBooks().then(renderAllCards);
 export async function renderAllCards(data) {
+    refs.categoriesList.classList.toggle('is-hidden')
+  refs.loader.classList.toggle('is-hidden')
   refs.booklistTitle.innerHTML = lastWordChange('Best Sellers Books');
   data.forEach(category => {
     let markup_base = `<li class="category-item">
