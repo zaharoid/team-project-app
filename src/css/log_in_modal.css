@@ -1,0 +1,116 @@
+.login_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--categories-text-color-light);
+  z-index: 30;
+  transition: 0.3s all;
+}
+
+.login_action {
+  opacity: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  max-width: 579px;
+  max-height: 516px;
+  border: 2px solid #111;
+  background-color: #f6f6f6;
+  border-radius: 18px;
+  padding: 80px 40px 40px 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 31;
+}
+
+.modal_login_btn_close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  line-height: 0;
+
+  background-color: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_flex {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+.login_input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0 20px 40px;
+  border-radius: 40px;
+  border: 2px solid #111;
+  background-color: #f6f6f6;
+
+  color: #111;
+  font-size: 18px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.btn_login {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 173px;
+  border-radius: 40px;
+  border: 2px solid #111;
+  background-color: #111;
+  color: #f3f3f3;
+  margin-bottom: 20px;
+
+  font-size: 18px;
+  font-family: DM Sans;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.log_btn {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.btn_sign_in {
+  color: rgba(17, 17, 17, 0.5);
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  background-color: inherit;
+}
+
+.btn_sign_up {
+  color: rgba(17, 17, 17, 0.5);
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  background-color: inherit;
+}
