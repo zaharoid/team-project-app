@@ -1,121 +1,103 @@
-
 import './home__support';
 import './dark-theme';
-import './modal-window/modal';
+// import './modal-window/modal';
 import './header';
 import './auth';
 
-const selectedBookList = document.querySelector('.shopping-list');
-const removeBookBtn = document.querySelector('.remove-book');
-const selectedBooks = JSON.parse(localStorage.getItem('selected')) ?? [];
-console.log(selectedBooks.length>0);
+import noBooksImage from '../images/shopping-list/list-placeholder.webp';
+import bookImagePlaceholder from '../images/shopping-list/book-image-placeholder.webp';
+import svgIcons from '../images/icons.svg';
+import bookShopIcon from '../images/bookshop.png';
 
+const refs = {
+  selectedBookList: document.querySelector('.shopping-list'),
+  selectedBooks: JSON.parse(localStorage.getItem('booksToBuy')) ?? [],
+};
 
-createMarkup(selectedBooks, selectedBookList);
+createMarkup(refs.selectedBooks, refs.selectedBookList);
 
-if(selectedBooks.length>0){
-  removeBookBtn.addEventListener('click', removeBook);
+if (refs.selectedBooks.length > 0) {
+  refs.selectedBookList.addEventListener('click', removeBook);
 }
 
-
-function createMarkup(arr, selectedBookList) {
+function createMarkup(arr) {
   let markup;
   if (arr.length) {
     markup = arr
       .map(
         ({
-          _id,
+          id,
           author,
-          list_name,
+          category,
           title,
-          book_image,
+          image,
           description,
-          buy_links,
-        }) => ` <li class="book-card data-id="${_id}" >
-
-          <div class="book-image-wrapper"><img src="${book_image}" alt="${title}" class="book-image"></div>
+          links,
+        }) => ` <li class="book-card" data-id="${id}" >
+          <div class="book-image-wrapper">
+          <img src="${image}" alt="${title}" class="book-image" onerror="this.src=${bookImagePlaceholder}"></div>
           <div class="book-info">
               <h2 class="book-title">${title}</h2>
-              <p class="book-category">${list_name}</p>
+              <p class="book-category">${category}</p>
               <p class="book-descr">${description}</p>
               <div class="card-inner-wrapper">
                   <h3 class="book-author">${author}</h3>
-
-                  <ul class="buy-links-list">${createBuyLinks(buy_links)}</ul>  
-
                   <div class="buy-links-wrapper">
-                  <svg class="buy-link">
-      <use href="./images/icons.svg#icon-trash"></use>
-    </svg>
-    <svg class="buy-link">
-      <use href="./images/icons.svg#icon-trash"></use>
-    </svg>
-    <svg class="buy-link">
-      <use href="./images/icons.svg#icon-trash"></use>
-    </svg>
+                  <ul class="buy-links-list">
+                  <li class="buy-link-item">
+                  <a href="${links[0]}" target="_blank">
+                  <svg class="buy-link amazon">
+                  <use href="${svgIcons}#icon-amazon"></use>
+                  </svg></a>
+                  </li>
+                  <li class="buy-link-item">
+                  <a href="${links[1]}" target="_blank">
+                  <svg class="buy-link apple">
+                  <use href="${svgIcons}#icon-apple"></use>
+                  </svg></a>
+                  </li>
+                  <li class="buy-link-item">
+                  <a href="${links[2]}" target="_blank">
+                  <img src=${bookShopIcon} alt="No books added" class="buy-link bookshop"></a>
+                  </li>
+                  </ul> 
                   </div>
-
-              </div>
+                  </div>
               <button type="button" class="remove-book">
               <svg class="remove-image">
-      <use href="./images/icons.svg#icon-trash"></use>
+      <use href="${svgIcons}#icon-trash" class="remove-icon"></use>
     </svg>
               </button>
           </div>
           
           
       </li>`
-
       )
       .join('');
   } else {
     markup = `<li class="empty-list-card">
       <p class="empty-list-text">This page is empty, add some books and proceed to order.</p>
-      <img src="./images/shopping-list/list-placeholder.webp" alt="No books added" class="empty-list-image">
+      <img src=${noBooksImage} alt="No books added" class="empty-list-image">
+
     </li>`;
   }
-  selectedBookList.innerHTML = markup;
+  return (refs.selectedBookList.innerHTML = markup);
 }
 
 function removeBook(evt) {
-  evt.preventDefault();
-}
-
-function createBuyLinks(arr) {
-  return arr
-    .map(data => {
-      if (data.name === 'Amazon') {
-        return `<li class="buy-link-item">
-      <a href=${data.url} target="_blank">
-      <svg class="buy-link amazon">
-      <use href=/src/images/icons.svg#icon-amazon></use>
-      </svg></a>
-      </li>
-      `;
-      }
-      if (data.name === 'Apple Books') {
-        return `<li class="buy-link-item">
-      <a href="${data.url}" target="_blank">
-      <svg class="buy-link apple">
-      <use href="/src/images/icons.svg#icon-apple"></use>
-      </svg></a>
-      </li>`;
-      }
-      if (data.name === 'Bookshop') {
-        return `<li class="buy-link-item">
-    <a href="${data.url}" target="_blank">
-    <svg class="buy-link bookshop">
-    <use href="/src/images/icons.svg#bookshop"></use>
-    </svg></a>
-    </li>
-    `;
-      }
-    })
-    .join('');
+  if (
+    evt.target.classList[0] === 'remove-image' ||
+    evt.target.classList[0] === 'remove-icon' ||
+    evt.target.classList[0] === 'remove-book'
+  ) {
+    let bookIndex = findBook(evt.target);
+    refs.selectedBooks.splice(bookIndex, 1);
+    localStorage.setItem('booksToBuy', JSON.stringify(refs.selectedBooks));
+    createMarkup(refs.selectedBooks, refs.selectedBookList);
+  }
 }
 
 function findBook(elem) {
-  const bookId = elem.closest('.book-card').dataset.id;
-  return selectedBooks.find(({ id }) => id === bookId);
+  let bookId = elem.closest('.book-card').dataset.id;
+  return refs.selectedBooks.findIndex(book => book.id === bookId);
 }
-

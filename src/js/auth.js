@@ -1,52 +1,42 @@
+//  import { initializeApp } from 'firebase/app';
+//   import {
+//     getAuth,
+//     createUserWithEmailAndPassword,
+// } from 'firebase/database';
+//   import { getDatabase, ref, set } from 'firebase/database';
 
- import { initializeApp } from 'firebase/app';
-  import {
-    getAuth,
-    createUserWithEmailAndPassword,
-} from 'firebase/database';
-  import { getDatabase, ref, set } from 'firebase/database';
+// const API_KEY = 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc';
 
+// const firebaseConfig = {
+//     apiKey: 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc',
+//     authDomain: "module-2-t-all.firebaseapp.com",
+//     projectId: "module-2-t-all",
+//     storageBucket: "module-2-t-all.appspot.com",
+//     messagingSenderId: "105200600055",
+//     appId: "1:105200600055:web:fa378da333fae09f3d24f2"
+//   };
 
-const API_KEY = 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc';
+// const app = initializeApp(firebaseConfig);
 
-const firebaseConfig = {
-    apiKey: 'AIzaSyDxNwmZzHZ-vdGILRkmWY0qu02lzG2Ospc',
-    authDomain: "module-2-t-all.firebaseapp.com",
-    projectId: "module-2-t-all",
-    storageBucket: "module-2-t-all.appspot.com",
-    messagingSenderId: "105200600055",
-    appId: "1:105200600055:web:fa378da333fae09f3d24f2"
-  };
+// function writeUserData(userId, name, email) {
+//   const db = getDatabase(app);
+//   console.log(db);
+// }
 
+// // writeUserData(
+// //   'DKt5yaLfQNTI9LVZtnLPhYqLJk63',
+// //   'ilya',
+// //   'tkachenkoilya07@icloud.com'
+// // );
+const refs = {
+  hiddenBtn: document.querySelector('.register-btn'),
+  openBtn: document.querySelector('.user-btn'),
+};
 
-const app = initializeApp(firebaseConfig);
-
-
-
-function writeUserData(userId, name, email) {
-  const db = getDatabase(app);
-  console.log(db);
-}
-
-// writeUserData(
-//   'DKt5yaLfQNTI9LVZtnLPhYqLJk63',
-//   'ilya',
-//   'tkachenkoilya07@icloud.com'
-// );
-
-const openBtn = document.querySelector('.user-btn');
-openBtn.addEventListener('click', openModal);
+refs.openBtn.addEventListener('click', openModal);
 
 function openModal() {
-  const modal = document.querySelector('.modal-form-auth');
-  modal.style.display = 'block';
-  modal.innerHTML = getAuthForm();
-  document
-    .getElementById('auth-form')
-    .addEventListener('submit', authFormHandler, { once: true });
-  document
-    .querySelector('.close-button-auth')
-    .addEventListener('click', closeModal);
+  refs.hiddenBtn.focus();
 }
 
 function closeModal(e) {

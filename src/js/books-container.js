@@ -2,14 +2,23 @@ import { fetchTopBooks } from './books-api';
 const refs = {
   categoriesList: document.querySelector('.books-in-categories-list'),
   booklistTitle: document.querySelector('.booklist-title'),
+  loader: document.querySelector('#loader-booklist'),
 };
 
-localStorage.setItem('booksToBuy', JSON.stringify([]));
+checkLocalStorage();
+
+function checkLocalStorage() {
+  if (localStorage.getItem('booksToBuy')) {
+    return;
+  }
+  localStorage.setItem('booksToBuy', JSON.stringify([]));
+}
 
 fetchTopBooks().then(renderAllCards);
+refs.booklistTitle.innerHTML = lastWordChange('Best Sellers Books');
 export async function renderAllCards(data) {
-  let booksArr = [];
-  refs.booklistTitle.innerHTML = lastWordChange('Best Sellers Books');
+  refs.categoriesList.classList.toggle('is-hidden');
+  refs.loader.classList.toggle('is-hidden');
   data.forEach(category => {
     let markup_base = `<li class="category-item">
     <h3 class="book-category-title">${category.books[0].list_name}</h3>
@@ -17,7 +26,6 @@ export async function renderAllCards(data) {
     let markup = ``;
 
     category.books.map(book => {
-      booksArr.push(book);
       markup =
         markup +
         `
@@ -29,7 +37,7 @@ export async function renderAllCards(data) {
           </div>
         </div>
         <h4 class="book-title">${book.title}</h4>
-        <p class=book-author-name>${book.author}</p>
+        <p class="book-author-name">${book.author}</p>
       </li>`;
     });
     markup_base =
@@ -42,18 +50,6 @@ export async function renderAllCards(data) {
       </li>`;
     refs.categoriesList.insertAdjacentHTML('beforeend', markup_base);
   });
-
-  localStorage.setItem('books', JSON.stringify(booksArr));
-}
-
-refs.categoriesList.addEventListener('click', onMoreBtnClick);
-
-function onMoreBtnClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-
-  //console.log(e.target.getAttribute('data-category-name'))
 }
 
 export function lastWordChange(string) {
