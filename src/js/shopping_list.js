@@ -17,11 +17,10 @@ const refs = {
 createMarkup(refs.selectedBooks, refs.selectedBookList);
 
 if (refs.selectedBooks.length > 0) {
-  const removeBookBtn = document.querySelector('.remove-book');
-  removeBookBtn.addEventListener('click', removeBook);
+  refs.selectedBookList.addEventListener('click', removeBook);
 }
 
-function createMarkup(arr, selectedBookList) {
+function createMarkup(arr) {
   let markup;
   if (arr.length) {
     markup = arr
@@ -46,7 +45,7 @@ function createMarkup(arr, selectedBookList) {
                   <div class="buy-links-wrapper">
                   <ul class="buy-links-list">
                   <li class="buy-link-item">
-                  <a href=${links[0]} target="_blank">
+                  <a href="${links[0]}" target="_blank">
                   <svg class="buy-link amazon">
                   <use href="${svgIcons}#icon-amazon"></use>
                   </svg></a>
@@ -59,16 +58,14 @@ function createMarkup(arr, selectedBookList) {
                   </li>
                   <li class="buy-link-item">
                   <a href="${links[2]}" target="_blank">
-                  <svg class="buy-link bookshop">
-                  <use href="${bookShopIcon}"></use>
-                  </svg></a>
+                  <img src=${bookShopIcon} alt="No books added" class="buy-link bookshop"></a>
                   </li>
                   </ul> 
                   </div>
                   </div>
               <button type="button" class="remove-book">
               <svg class="remove-image">
-      <use href="${svgIcons}#icon-trash"></use>
+      <use href="${svgIcons}#icon-trash" class="remove-icon"></use>
     </svg>
               </button>
           </div>
@@ -84,18 +81,34 @@ function createMarkup(arr, selectedBookList) {
 
     </li>`;
   }
- return refs.selectedBookList.innerHTML = markup;
+  return (refs.selectedBookList.innerHTML = markup);
 }
 
 function removeBook(evt) {
-  evt.preventDefault();
-  let bookIndex = findBook(evt.target);
-  refs.selectedBooks.splice(bookIndex, 1);
-  localStorage.setItem('booksToBuy', JSON.stringify(refs.selectedBooks));
-  return createMarkup(refs.selectedBooks, refs.selectedBookList); 
+  if (
+    evt.target.classList[0] === 'remove-image' ||
+    evt.target.classList[0] === 'remove-icon' ||
+    evt.target.classList[0] === 'remove-book'
+  ) {
+    let bookIndex = findBook(evt.target);
+    refs.selectedBooks.splice(bookIndex, 1);
+    localStorage.setItem('booksToBuy', JSON.stringify(refs.selectedBooks));
+    createMarkup(refs.selectedBooks, refs.selectedBookList);
+  }
 }
 
 function findBook(elem) {
   let bookId = elem.closest('.book-card').dataset.id;
-  return refs.selectedBooks.findIndex(book =>book.id === bookId);
+  return refs.selectedBooks.findIndex(book => book.id === bookId);
+}
+
+const refsCurrent = {
+  bookList: document.querySelector('.bookslist'),
+  home: document.querySelector('.nav-link.home'),
+  shopList: document.querySelector('.nav-link.shop'),
+};
+
+if (!refsCurrent.bookList) {
+  refsCurrent.home.classList.remove('current');
+  refsCurrent.shopList.classList.add('current');
 }

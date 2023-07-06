@@ -29,9 +29,6 @@
   z-index: 30;
 
   background-color: var(--base-bg-color);
-
-
-
 }
 
 .modal_btn_close {
@@ -43,12 +40,18 @@
   padding: 0;
   line-height: 0;
 
-  background-color: var(--base-bg-color);
-
+  background-color: inherit;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+
+  transition: all var(--animation);
+}
+.modal_btn_close:hover {
+  border-color: var(--is-active-home-category-color);
 }
 
 .modal-cover {
@@ -76,6 +79,7 @@
 }
 
 .modal-add-btn {
+  display: block;
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
@@ -92,11 +96,15 @@
   margin: 0;
   padding: 0;
 
-  stroke: #202024;
+  stroke: var(--logo-color-text);
 }
 
 .modal-svg-color {
   stroke: var(--logo-color-text);
+  transition: all var(--animation);
+}
+.modal-svg-color:hover {
+stroke: var(--is-active-home-category-color);
 }
 
 .modal-description {
@@ -150,6 +158,12 @@
     border-radius: 40px;
     width: 499px;
     padding: 20px 0;
+    transition: all var(--animation);
+  }
+  .modal-add-btn:hover {
+    background-color: var(--is-active-home-category-color);
+    border-color: var(--color1);
+    color: var(--primery-bg-color-light)
   }
 
   .modal-cover {

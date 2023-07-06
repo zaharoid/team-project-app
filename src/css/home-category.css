@@ -4,7 +4,9 @@
 
 }
 
-
+.category-li{
+  height: 24px;
+}
 .hidden {
     position: absolute;
     width: 1px;
@@ -69,7 +71,7 @@
 .category-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 31px;
 }
 
 .category-link {
@@ -91,6 +93,8 @@ a.is-active {
   text-transform: uppercase;
   font-size: 15px;
   line-height: 1.12;
+
+  
 }
 
 a.category-link:hover {
@@ -119,12 +123,6 @@ a.category-link:hover {
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
-    .category-list {
-        gap: 32px;
-    }
-
     .category-link {
         font-size: 18px;
         font-weight: 1.33;
@@ -166,6 +164,8 @@ a.category-link:hover {
   .category-link {
     font-size: 18px;
     font-weight: 1.33;
+
+    
   }
 }
 
