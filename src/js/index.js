@@ -9,3 +9,6 @@ import './modal-window/modal';
 import './header';
 import './auth';
 import './adding-to-local-storage';
+
+import './modal-window/firebase'
+import './modal-window/modal_log'

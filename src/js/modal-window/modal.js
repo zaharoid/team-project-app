@@ -1,10 +1,3 @@
-// import Notiflix from 'notiflix';
-// import { fetchBookID } from '../books-api';
-
-// let modalBody = document.querySelector('main');
-// let modalOpenWindow = document.querySelector('.modal_window');
-// let modalMain = document.querySelector('.modal-main');
-
 import Notiflix from 'notiflix';
 import { fetchBookID } from '../books-api';
 
@@ -19,7 +12,7 @@ const refs = {
   addBookBtn: document.querySelector('[data-action="add"]'),
 };
 
-let modalBody = document.querySelector('main');
+let modalBody = document.querySelector('body');
 let modalOpenWindow = document.querySelector('.modal_window');
 let modalMain = document.querySelector('.modal-main');
 
@@ -27,25 +20,23 @@ modalBody.style.paddingRight = '0px';
 
 modalBody.addEventListener('click', currentBook);
 
-function currentBook() {
-  const bookCards = document.querySelectorAll('[data-id]');
-  bookCards.forEach(card => {
-    card.addEventListener('click', e => {
-      const bookId = card.dataset.id;
-      modalBody.removeEventListener('click', currentBook);
+function currentBook(e) {
+  if (!e.target.closest('[data-id]')) {
+    return;
+  }
+  
+const card = e.target.closest('[data-id]');
+const bookId = card.dataset.id;
       fetchBookID(bookId)
-        .then(data => {
-          createMarkup(data);
-          toggleTextContentButton(data);
-
-          blockScroll();
-          eventListeners();
-        })
-        .catch(error => {
-          console.log('Error:', error);
-        });
-    });
-  });
+      .then(data => {
+        createMarkup(data);
+        toggleTextContentButton(data);
+        blockScroll();
+        eventListeners();
+      })
+      .catch(error => {
+        console.log('Error:', error);
+      });
 }
 
 refs.addBookBtn.addEventListener('click', onBtnClick);
@@ -139,7 +130,7 @@ function eventListeners() {
   });
 }
 
-function blockScroll() {
+export function blockScroll() {
   modalBody.classList.add('no_scroll');
 }
 
