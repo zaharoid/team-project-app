@@ -1,65 +1,47 @@
 import { blockScroll } from './modal';
 
-<<<<<<< Updated upstream
-const sing_up_btn = document.querySelector('.btn_sign_up')
-const sing_in_btn = document.querySelector('.btn_sign_in')
-const user_log_in_btn = document.querySelector(".register-btn") 
-const login_btn_close = document.querySelector("modal-svg")
-=======
-const user_log_in_btn = document.querySelector('.button-container');
+const sing_up_btn = document.querySelector('.btn_sign_up');
+const sing_in_btn = document.querySelector('.btn_sign_in');
+const user_log_in_btn = document.querySelector('.register-btn');
 const login_btn_close = document.querySelector('modal-svg');
->>>>>>> Stashed changes
 
 let modal_action = document.querySelector('.login_action');
 let modalLoginBody = document.querySelector('body');
 
-<<<<<<< Updated upstream
-sing_up_btn.addEventListener('click', preventDefault)
-sing_in_btn.addEventListener('click', preventDefault)
-user_log_in_btn.addEventListener('click', createLoginModalMarkup)
-console.log(user_log_in_btn)
+sing_up_btn.addEventListener('click', preventDefault);
+sing_in_btn.addEventListener('click', preventDefault);
+user_log_in_btn.addEventListener('click', createLoginModalMarkup);
+console.log(user_log_in_btn);
 
 function preventDefault(e) {
-    e.preventDefault();
+  e.preventDefault();
 }
-=======
-user_log_in_btn.addEventListener('click', createLoginModalMarkup);
->>>>>>> Stashed changes
 
 modalLoginBody.style.paddingRight = '0';
-    
+
 function createLoginModalMarkup(e) {
-<<<<<<< Updated upstream
-    modalLoginBody.style.paddingRight = '18px';
-    blockScroll();
-    modalLoginBody.classList.add('login_overlay');
-    modal_action.style.visibility = 'visible';
-    modal_action.style.opacity = '1';
-    eventLoginListeners();
-=======
-  blockScroll();
-  eventLoginListeners();
-  modalLoginBody.classList.add('login_overlay');
   modalLoginBody.style.paddingRight = '18px';
+  blockScroll();
+  modalLoginBody.classList.add('login_overlay');
   modal_action.style.visibility = 'visible';
   modal_action.style.opacity = '1';
->>>>>>> Stashed changes
+  eventLoginListeners();
 }
 
 function eventLoginListeners() {
   const buttonClose = document.querySelector('.modal_login_btn_close');
   buttonClose.addEventListener('click', closeLoginModal);
-    window.addEventListener('keydown', onEscCloseModal);
-      modalLoginBody.addEventListener('click', onOverlayCloseModal);
+  window.addEventListener('keydown', onEscCloseModal);
+  modalLoginBody.addEventListener('click', onOverlayCloseModal);
   modalLoginBody.addEventListener('scroll', e => {
     e.preventDefault();
   });
 }
 
 function onOverlayCloseModal(e) {
-    if (e.target !== modal_action) {
-        return;
-    }
+  if (e.target !== modal_action) {
+    return;
+  }
   closeLoginModal();
 }
 
