@@ -112,6 +112,15 @@
   font-weight: 400;
 }
 
+
+.description-book-cont-color {
+  color: var(--books-container-author-text-color);
+}
+
+.accent-color {
+  color: var(--accent-color);
+}
+
 .bookslist {
   margin-bottom: 8px;
 }
