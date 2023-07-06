@@ -100,15 +100,15 @@ a.current {
   transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background: linear-gradient(#4f2ee8, #686868);
 }
 
-input:focus+.slider {
+input:focus + .slider {
   box-shadow: 0 0 1px #4f2ee8;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(20px);
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
@@ -316,4 +316,54 @@ input:checked+.slider:before {
   .link-home-ul {
     margin-left: 92px;
   }
+}
+
+/* //////////////////////////////modal/////////////////////// */
+
+.burger-modal {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 375px;
+  height: calc(100vh - 64px);
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+  z-index: 100;
+}
+
+.burger-modal-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+.burger-modal-btn {
+  padding: 15px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 184px;
+  height: 48px;
+  border-radius: 18px;
+  border: 1.5px solid #111;
+  background: var(--is-active-home-category-color);
+}
+
+/* .burger-modal-btn .sign {
+  margin-bottom: 40px;
+} */
+.burger-btn-text {
+  color: var(--header-bg-color-light);
+  font-size: 14px;
+  font-family: DM Sans;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
+
+.icon-user {
+  stroke: var(--hover-book-color);
 }
