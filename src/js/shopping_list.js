@@ -101,3 +101,14 @@ function findBook(elem) {
   let bookId = elem.closest('.book-card').dataset.id;
   return refs.selectedBooks.findIndex(book => book.id === bookId);
 }
+
+const refsCurrent = {
+  bookList: document.querySelector('.bookslist'),
+  home: document.querySelector('.nav-link.home'),
+  shopList: document.querySelector('.nav-link.shop'),
+};
+
+if (!refsCurrent.bookList) {
+  refsCurrent.home.classList.remove('current');
+  refsCurrent.shopList.classList.add('current');
+}

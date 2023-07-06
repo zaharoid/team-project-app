@@ -6,7 +6,12 @@
   margin-right: auto;
   border-radius: 0px 0px 8px 8px;
   border: 1.5px solid #111;
+  background: #111;
   background: var(--header-bg-color-light);
+}
+
+.dark-theme .header-container {
+  background: #111;
 }
 
 .link {
@@ -135,7 +140,7 @@ input:checked + .slider:before {
   width: 37px;
   height: 37px;
   border-radius: 50px;
-  background-color: var(--primery-bg-color-light);
+  background-color: #fff;
 }
 
 .icon-user {
@@ -267,6 +272,9 @@ input:checked + .slider:before {
 
   .nav-link:hover {
     color: var(--is-active-home-category-color);
+  }
+  .nav-link.current:hover {
+    color: var(--header-bg-color-light);
   }
 
   .user-btn {

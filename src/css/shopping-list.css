@@ -9,6 +9,7 @@
 body{
   margin:0;
   font-family: DM Sans;
+  background-color: var(--primery-bg-color-light);
 }
 .shopping-list-container {
   width: 100%;
@@ -18,7 +19,7 @@ body{
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 40px;
-  background-color: var(--primery-bg-color-light);
+  
 }
 
 .shopping-list-wrapper{

@@ -93,6 +93,8 @@ a.is-active {
   text-transform: uppercase;
   font-size: 15px;
   line-height: 1.12;
+
+  
 }
 
 a.category-link:hover {
@@ -162,6 +164,8 @@ a.category-link:hover {
   .category-link {
     font-size: 18px;
     font-weight: 1.33;
+
+    
   }
 }
 
