@@ -1,5 +1,5 @@
 :root {
-  --is-active-home-category-color: #4F2EE8;
+  --is-active-home-category-color: #4f2ee8;
   --book-title-books-container-color: #000000;
   --books-container-author-text-color: #000000;
   --accent-color: #4f2ee8;
@@ -18,11 +18,9 @@
   --icon-hover-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
 }
 
-
 body {
   background-color: var(--base-bg-color);
 }
-
 
 * {
   box-sizing: border-box;
@@ -36,11 +34,11 @@ body {
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 /* tablet */
-@media screen and (min-width: 480px) {}
+@media screen and (min-width: 480px) {
+}
 
 /* desktop */
 @media screen and (min-width: 768px) {
