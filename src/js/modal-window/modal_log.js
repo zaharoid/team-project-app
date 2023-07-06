@@ -9,7 +9,6 @@ const login_btn_close = document.querySelector("modal-svg")
 
 let modal_action = document.querySelector('.login_action');
 let modalLoginBody = document.querySelector('body');
-// modalLoginBody.style.paddingRight = '0px';
 
 sing_up_btn.addEventListener('click', preventDefault)
 sing_in_btn.addEventListener('click', preventDefault)
@@ -20,11 +19,13 @@ function preventDefault(e) {
     e.preventDefault();
 }
 
+modalLoginBody.style.paddingRight = '0';
+    
 function createLoginModalMarkup(e) {
+    modalLoginBody.style.paddingRight = '18px';
     blockScroll();
     modalLoginBody.classList.add('login_overlay');
     modal_action.style.visibility = 'visible';
-    // modalLoginBody.style.paddingRight = '18px';
     modal_action.style.opacity = '1';
     eventLoginListeners();
 }
