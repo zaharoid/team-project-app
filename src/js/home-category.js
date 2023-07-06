@@ -91,6 +91,8 @@ function onMoreBtnClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
+  toggleBooksLoader();
+  window.scrollBy(0, 0);
   let activeBook = document.querySelector('.is-active');
   activeBook.classList.remove('is-active');
 
