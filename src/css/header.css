@@ -100,15 +100,15 @@ a.current {
   transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background: linear-gradient(#4f2ee8, #686868);
 }
 
-input:focus+.slider {
+input:focus + .slider {
   box-shadow: 0 0 1px #4f2ee8;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(20px);
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
@@ -183,6 +183,7 @@ input:checked+.slider:before {
 .register-btn:focus {
   transform: translateY(100%);
   opacity: 1;
+  z-index: 1;
 }
 
 .register-btn {
