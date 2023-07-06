@@ -16,7 +16,6 @@
 .modal-main {
   opacity: 0;
   visibility: hidden;
-  text-align: center;
   box-sizing: border-box;
   min-width: 320px;
   max-width: 335px;
@@ -51,7 +50,6 @@
 }
 
 .modal-title {
-  text-align: left;
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
@@ -60,7 +58,6 @@
 }
 
 .modal-author {
-  text-align: left;
   font-family: var(--primery-font);
   font-style: italic;
   font-size: 12px;
@@ -90,7 +87,6 @@
 }
 
 .modal-description {
-  text-align: left;
   font-family: var(--primery-font);
   width: 287px;
   color: var(--logo-color-text);

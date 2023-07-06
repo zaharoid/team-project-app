@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 import { fetchBookID } from '../books-api';
 
-let modalBody = document.querySelector('body');
+let modalBody = document.querySelector('main');
 let modalOpenWindow = document.querySelector('.modal_window');
 let modalMain = document.querySelector('.modal-main');
 const bookCover = document.querySelector('.modal-cover');
@@ -28,7 +28,6 @@ function currentBook() {
       fetchBookID(bookId)
         .then(data => {
           createMarkup(data);
-          toggleTextContentButton(data);
           blockScroll();
           eventListeners();
         })
@@ -64,7 +63,7 @@ function onBtnClick() {
   books.push(bookFromModal);
   localStorage.setItem('booksToBuy', JSON.stringify(books));
 
-//   closeModal();
+  closeModal();
 
   Notiflix.Notify.success('Book successfully added!');
   addBookBtn.textContent = 'REMOVE FROM THE SHOPPING LIST';
@@ -76,12 +75,8 @@ function onBtnClick() {
 
 function toggleTextContentButton(book) {
   const booksFromLS = JSON.parse(localStorage.getItem('booksToBuy'));
-  console.log(booksFromLS);
+  console.dir(booksFromLS);
 }
-
-// function removeBook() {
-    
-// }
 
 function getDataFromModal() {
   return {
@@ -108,6 +103,7 @@ function createMarkup(data) {
   modalDescription.textContent = data.description;
 
   modalTitle.setAttribute('data-id', `${data._id}`);
+  toggleTextContentButton(data);
   topBookShopLink(data);
 }
 
@@ -147,7 +143,7 @@ function closeModal() {
   modalMain.style.opacity = '0';
   modalBody.removeEventListener('click', onOverlayCloseModal);
   modalBody.removeEventListener('keydown', onEscCloseModal);
-  modalBody.removeEventListener('click', currentBook);
+  // modalBody.removeEventListener('click', currentBook);
   modalBody.addEventListener('click', currentBook);
 }
 
