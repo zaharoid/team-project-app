@@ -73,9 +73,9 @@ const modalLoginAction = document.querySelector('.overlay_log');
 let modal_action = document.querySelector('.login_action');
 let modalLoginBody = document.querySelector('body');
 
-sing_up_btn.addEventListener('click', preventDefault);
-sing_in_btn.addEventListener('click', preventDefault);
-user_log_in_btn.addEventListener('click', createLoginModalMarkup);
+// sing_up_btn.addEventListener('click', preventDefault);
+// sing_in_btn.addEventListener('click', preventDefault);
+// user_log_in_btn.addEventListener('click', createLoginModalMarkup);
 
 function preventDefault(e) {
   e.preventDefault();

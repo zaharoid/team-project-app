@@ -331,8 +331,13 @@ input:checked + .slider:before {
 
 /* //////////////////////////////modal/////////////////////// */
 
+.burger-modal.burger-hidden {
+  display: none;
+}
+
 .burger-modal {
   display: flex;
+
   flex-wrap: wrap;
   align-content: space-between;
   width: 375px;
@@ -342,6 +347,8 @@ input:checked + .slider:before {
     #4f2ee8 18.03%,
     #fff 100%
   );
+  margin-left: auto;
+  margin-right: auto;
   z-index: 100;
 }
 
