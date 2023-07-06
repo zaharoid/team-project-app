@@ -81,20 +81,23 @@ function createMarkup(arr) {
 
     </li>`;
   }
- return refs.selectedBookList.innerHTML = markup;
+  return (refs.selectedBookList.innerHTML = markup);
 }
 
 function removeBook(evt) {
-  if(evt.target.classList[0] ==='remove-image'|| evt.target.classList[0] ==='remove-icon'|| evt.target.classList[0] ==='remove-book'){
+  if (
+    evt.target.classList[0] === 'remove-image' ||
+    evt.target.classList[0] === 'remove-icon' ||
+    evt.target.classList[0] === 'remove-book'
+  ) {
     let bookIndex = findBook(evt.target);
     refs.selectedBooks.splice(bookIndex, 1);
     localStorage.setItem('booksToBuy', JSON.stringify(refs.selectedBooks));
-    createMarkup(refs.selectedBooks, refs.selectedBookList); 
+    createMarkup(refs.selectedBooks, refs.selectedBookList);
   }
-  };
-  
+}
 
 function findBook(elem) {
   let bookId = elem.closest('.book-card').dataset.id;
-  return refs.selectedBooks.findIndex(book =>book.id === bookId);
+  return refs.selectedBooks.findIndex(book => book.id === bookId);
 }

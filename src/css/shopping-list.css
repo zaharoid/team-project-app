@@ -96,7 +96,7 @@ body{
   letter-spacing: -0.04em;
   color: var(--logo-color-text);
   margin-bottom: 14px;
-  overflow: scroll;
+  overflow: hidden;
 }
 .card-inner-wrapper {
   display: flex;
