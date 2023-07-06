@@ -1,38 +1,48 @@
 <div class="modal_window">
   <div class="modal-main">
     <button class="modal_btn_close" type="button">
-      <svg class="modal-svg modal-svg-color " width="24px" height="24px">
+      <svg class="modal-svg modal-svg-color " width="24" height="24">
         <use href="/src/images/icons.svg#icon-x-close"></use>
       </svg>
     </button>
     <div class="modal_book_info">
       <img class="modal-cover" src="#" alt="" />
       <div class="modal_text_info">
-        <h2 class="modal-title"></h2>
+        <h2 class="modal-title" data-category=""></h2>
         <p class="modal-author"></p>
         <p class="modal-description"></p>
         <ul class="modal-books-shops">
           <li>
             <a class="amazon" href="" target="_blank">
-              <svg class="modal-svg" width="62px" height="19px">
+              <svg class="modal-svg" width="62" height="19">
                 <use href="/src/images/icons.svg#icon-amazon"></use>
               </svg></a>
           </li>
           <li>
             <a class="apple" href="" target="_blank">
-              <svg class="modal-svg" width="32px" height="32px">
+              <svg class="modal-svg" width="32" height="32">
                 <use href="/src/images/icons.svg#icon-apple"></use>
-              </svg></a>
+
+              </svg>
+            </a>
           </li>
           <li>
             <a class="bookshop" href="" target="_blank">
-              <svg class="modal-svg" width="38px" height="36px">
-                <use href="/src/images/icons.svg#bookshop"></use>
-              </svg></a>
+              <img
+                width="38"
+                height="36"
+                class="modal-svg"
+                src="/src/images/bookshop.png"
+                alt="bookshop"
+              />
+            </a>
           </li>
         </ul>
       </div>
     </div>
-    <button class="modal-add-btn" type="button">ADD TO SHOPPING LIST</button>
+    <button class="modal-add-btn" type="button" data-action="add">
+      ADD TO SHOPPING LIST
+    </button>
+    <p class="is_book_add"></p>
   </div>
 </div>

@@ -8,3 +8,4 @@ import './dark-theme';
 import './modal-window/modal';
 import './header';
 import './auth';
+import './adding-to-local-storage';

@@ -14,12 +14,14 @@ ul {
   padding: 0;
   list-style: none;
 }
-
 button {
-  cursor: pointer;
-  display: block;
+  padding: 0;
   border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
 }
+
 
 img {
   display: block;
