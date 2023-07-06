@@ -1,4 +1,4 @@
-.modal-form-auth {
+/* .modal-form-auth {
   display: none;
   position: fixed;
   width: 100%;
@@ -58,8 +58,4 @@
   color: #333;
   outline: none;
 }
-
-/* .input-auth:focus {
-  border-color: var(--accent-color);
-  background-color: #fff;
-} */
+ */
