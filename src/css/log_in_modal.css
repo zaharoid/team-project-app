@@ -135,6 +135,9 @@
   color: red;
 } */
 
+.overlay_log.hidden-log {
+  display: none;
+}
 
 .login_overlay {
   position: fixed;

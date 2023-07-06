@@ -1,9 +1,11 @@
 /* heart animotions styles */
 .heart {
     position: absolute;
-    margin-left: 50%;
+    left: 50%;
+    
+    
     padding-bottom: 100px;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 0);
 }
 
 .span-heart {
