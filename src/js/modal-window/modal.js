@@ -130,7 +130,7 @@ function eventListeners() {
   });
 }
 
-function blockScroll() {
+export function blockScroll() {
   modalBody.classList.add('no_scroll');
 }
 
