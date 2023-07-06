@@ -19,7 +19,7 @@
   box-sizing: border-box;
   min-width: 320px;
   max-width: 335px;
-  border: 2px solid rgba(17, 17, 17, 1);
+  border: 2px solid var(--modal-border-color);
   border-radius: 18px;
   padding: 40px 24px;
   position: fixed;
@@ -27,7 +27,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 30;
-  background-color: var(--header-bg-color-light);
+
+  background-color: var(--base-bg-color);
+
+
+
 }
 
 .modal_btn_close {
@@ -38,7 +42,9 @@
   height: 24px;
   padding: 0;
   line-height: 0;
-  background-color: var(--header-bg-color-light);
+
+  background-color: var(--base-bg-color);
+
 
   display: flex;
   align-items: center;
@@ -53,6 +59,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
+
   color: var(--logo-color-text);
   margin-bottom: 4px;
 }
@@ -72,8 +79,9 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
-  color: var(--logo-color-text);
-  background-color: var(--header-bg-color-light);
+  color: var(--book-title-books-container-color);
+  background-color: var(--base-bg-color);
+
   margin: 0 auto;
   border: 2px solid var(--is-active-home-category-color);
   border-radius: 40px;
@@ -83,13 +91,19 @@
 .modal-svg {
   margin: 0;
   padding: 0;
+
+  stroke: #202024;
+}
+
+.modal-svg-color {
   stroke: var(--logo-color-text);
 }
 
 .modal-description {
   font-family: var(--primery-font);
   width: 287px;
-  color: var(--logo-color-text);
+  color: var(--book-title-books-container-color);
+
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -124,7 +138,7 @@
 
   .modal-description {
     width: 279px;
-    color: var(--logo-color-text);
+    color: var(--book-title-books-container-color);
     margin-bottom: 20px;
   }
 
