@@ -28,11 +28,16 @@
 // //   'ilya',
 // //   'tkachenkoilya07@icloud.com'
 // // );
+const refs = {
+  hiddenBtn: document.querySelector('.register-btn'),
+  openBtn: document.querySelector('.user-btn'),
+};
 
-const openBtn = document.querySelector('.user-btn');
-openBtn.addEventListener('click', openModal);
+refs.openBtn.addEventListener('click', openModal);
 
-function openModal() {}
+function openModal() {
+  refs.hiddenBtn.focus();
+}
 
 function closeModal(e) {
   const modal = document.querySelector('.modal-form-auth');

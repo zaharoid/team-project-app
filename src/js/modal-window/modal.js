@@ -133,7 +133,7 @@ function eventListeners() {
   const buttonClose = document.querySelector('.modal_btn_close');
   buttonClose.addEventListener('click', closeModal);
   modalBody.addEventListener('click', onOverlayCloseModal);
-  modalBody.addEventListener('keydown', onEscCloseModal);
+  window.addEventListener('keydown', onEscCloseModal);
   modalBody.addEventListener('scroll', e => {
     e.preventDefault();
   });
@@ -150,7 +150,7 @@ function closeModal() {
   modalMain.style.visibility = 'hidden';
   modalMain.style.opacity = '0';
   modalBody.removeEventListener('click', onOverlayCloseModal);
-  modalBody.removeEventListener('keydown', onEscCloseModal);
+  window.removeEventListener('keydown', onEscCloseModal);
   modalBody.removeEventListener('click', currentBook);
   modalBody.addEventListener('click', currentBook);
 }
