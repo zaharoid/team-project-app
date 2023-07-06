@@ -6,13 +6,13 @@
   height: 100%;
   background-color: var(--categories-text-color-light);
   z-index: 30;
-  transition: 0.3s all;
 }
 
 .login_action {
   opacity: 0;
   visibility: hidden;
   box-sizing: border-box;
+  width: 100%;
   max-width: 579px;
   max-height: 516px;
   border: 2px solid #111;
@@ -71,8 +71,9 @@
   display: flex;
   text-align: center;
   justify-content: center;
+  max-width: 499px;
   width: 100%;
-  padding: 20px 173px;
+  padding: 20px 0;
   border-radius: 40px;
   border: 2px solid #111;
   background-color: #111;
@@ -113,4 +114,9 @@
   line-height: 24px;
   text-transform: uppercase;
   background-color: inherit;
+}
+
+.login_error {
+  text-align: center;
+  color: red;
 }
