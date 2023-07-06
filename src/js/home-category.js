@@ -2,12 +2,18 @@ import { lastWordChange } from './books-container';
 import { renderAllCards} from './books-container';
 import { fetchTopBooks, fetchBookCategories, fetchBookByCategory } from './books-api';
 const refs = {
+  loaderEl: document.querySelector('.loader '),
   divEl: document.querySelector('.category-list'),
   allcategory: document.querySelector('.all-category'),
   onecategoryEl: document.querySelector('.category-link'),
   categoriesList: document.querySelector('.books-in-categories-list'),
+   loader: document.querySelector('#loader')
 };
-fetchBookCategories().then(data => {
+
+refs.divEl.classList.add('is-hidden');
+refs.categoriesList.classList.add('is-hidden')
+
+fetchBookCategories().then(data => { 
    const firstCategoryMarkup = `<li class="list category-item">
             <a class="link category-link is-active" href="#" id="all">All categories</a>
         </li>`
@@ -17,6 +23,9 @@ fetchBookCategories().then(data => {
         <a class="link category-link" href="#">${book.list_name}</a>
       </li>`;
     refs.divEl.insertAdjacentHTML('beforeend', markup);
+    
+    refs.divEl.classList.remove('is-hidden')
+     refs.loaderEl.classList.add('is-hidden')
   });
 });
 // refs.allcategory.focus()
@@ -38,18 +47,25 @@ function onCategoryClick(e) {
     titleCategory.innerHTML = lastWordChange(titleTextContent);
     refs.categoriesList.classList.add('render-category');
     fetchBookByCategory(e.target.textContent).then(data =>
-      renderMarkupBooksByCategory(takeBookMarkupByCategory(data))
+      renderMarkupBooksByCategory(takeBookMarkupByCategory(data)
+      )
+      
     );
   }
   else {
+      refs.categoriesList.classList.toggle('is-hidden')
+  refs.loader.classList.toggle('is-hidden')
+    
     refs.categoriesList.innerHTML = "";
     titleCategory.innerHTML = lastWordChange("Best Sellers Books");
     refs.categoriesList.classList.add('render-category');
     fetchTopBooks().then(renderAllCards);
+    
   }
 
 }
 function takeBookMarkupByCategory(books) {
+
   let markup = books
     .map(({ author, title, book_image, _id }) => {
       return `
@@ -67,7 +83,9 @@ function takeBookMarkupByCategory(books) {
   return markup;
 }
 function renderMarkupBooksByCategory(markup) {
-  refs.categoriesList.innerHTML = markup;
+  refs.categoriesList.innerHTML = markup;  
+  
+ 
 }
 
 refs.categoriesList.addEventListener('click', onMoreBtnClick);
