@@ -16,14 +16,17 @@
   --secondary-text-color: #b4afaf;
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --icon-hover-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15);
-
-
   --base-bg-color: #fff;
   --color1: #000;
   --modal-border-color: #000;
-
   --scrollbar-color: #e0e0e0;
+}
 
+@font-face {
+ font-family: 'DM Sans';
+ src: url('../fonts/DMSans-Bold.ttf') format('truetype'),
+ url('../fonts/DMSans-Medium.ttf') format('truetype'),
+ url('../fonts/DMSans-Regular.ttf') format('truetype');
 }
 
 body {
