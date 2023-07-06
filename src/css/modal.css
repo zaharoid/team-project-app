@@ -79,6 +79,7 @@
 }
 
 .modal-add-btn {
+  display: block;
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;

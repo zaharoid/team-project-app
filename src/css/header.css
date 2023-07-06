@@ -203,6 +203,7 @@ input:checked + .slider:before {
   border-radius: 18px;
   border: 1.5px solid var(--logo-color-text);
   background: var(--header-bg-color-light);
+  color: var(--primery-bg-color-light);
   opacity: 0;
   z-index: -1;
 
@@ -212,7 +213,7 @@ input:checked + .slider:before {
 }
 
 .register-btn-text {
-  color: var(--logo-color-text);
+  color: #111;
   font-size: 14px;
   font-family: DM Sans;
   font-weight: 500;
