@@ -49,6 +49,7 @@ function onCategoryClick(e) {
     fetchBookByCategory(e.target.textContent).then(data =>
       renderMarkupBooksByCategory(takeBookMarkupByCategory(data)
       )
+      
     );
   }
   else {
@@ -83,6 +84,7 @@ function takeBookMarkupByCategory(books) {
 }
 function renderMarkupBooksByCategory(markup) {
   refs.categoriesList.innerHTML = markup;  
+  
  
 }
 
